@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101c27">
+  <meta name="description" content="Local DNA sequence analysis for composition, transformations, translation, ORFs and GC profiles.">
+  <title>Helix Lab | DNA Sequence Analyzer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Helix Lab home"><span class="brand-mark">HL</span><span>HELIX <b>LAB</b></span></a>
+    <nav aria-label="Primary navigation"><a href="#analysis">Analysis</a><a href="#method">Methodology</a><a href="https://github.com/shambhavi-synapse/dna-sequence-analyzer" target="_blank" rel="noreferrer">Source ↗</a></nav>
+    <span class="local-status"><i></i> LOCAL ANALYSIS</span>
+  </header>
+  <main id="top">
+    <section class="intro">
+      <p class="eyebrow">SEQUENCE WORKSPACE <span>·</span> DNA</p>
+      <h1>Inspect a sequence.<br><em>Understand its structure.</em></h1>
+      <p class="lede">Composition, strand transformations, six-frame translation and candidate open reading frames, calculated in your browser.</p>
+    </section>
+    <section class="workspace" id="analysis" aria-labelledby="input-heading">
+      <div class="section-head"><div><p class="eyebrow">01 / INPUT</p><h2 id="input-heading">Sequence input</h2></div><button id="example-btn" class="text-button">Load example sequence ↗</button></div>
+      <label class="field-label" for="sequence-name">Sequence label</label>
+      <input id="sequence-name" class="name-input" maxlength="80" value="Sequence 1" autocomplete="off">
+      <label class="field-label" for="sequence-input">Paste DNA or FASTA</label>
+      <textarea id="sequence-input" spellcheck="false" placeholder=">sample_sequence\nATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG" aria-describedby="input-help"></textarea>
+      <div class="input-footer"><span id="input-help">A, C, G, T and IUPAC ambiguity codes are supported. Whitespace is ignored.</span><label class="upload-button" for="fasta-file">Upload FASTA<input id="fasta-file" type="file" accept=".fa,.fasta,.fna,.txt,text/plain" hidden></label></div>
+      <div class="controls"><label for="min-orf">Minimum ORF length <input id="min-orf" type="number" min="1" max="1000000" value="30"> nt</label><button id="analyze-btn" class="primary-button">Analyze sequence <span>→</span></button></div>
+      <p id="error-message" class="error" role="alert" hidden></p>
+    </section>
+    <section id="results" class="results" hidden aria-live="polite">
+      <div class="results-title"><div><p class="eyebrow">02 / RESULTS</p><h2 id="result-name">Sequence analysis</h2></div><div class="export-actions"><button id="copy-btn" class="secondary-button">Copy summary</button><button id="csv-btn" class="secondary-button">Download CSV</button><button id="fasta-btn" class="secondary-button">Download FASTA</button><button id="print-btn" class="secondary-button">Print report</button></div></div>
+      <div class="metrics" id="metrics"></div>
+      <div class="result-grid">
+        <article class="panel composition-panel"><div class="panel-head"><div><p class="eyebrow">COMPOSITION</p><h3>Nucleotide profile</h3></div><span class="unit">Known bases denominator</span></div><div class="composition-layout"><div id="composition-chart" class="composition-chart" role="img" aria-label="Nucleotide composition chart"></div><div id="composition-legend" class="legend"></div></div><p class="note" id="composition-note"></p></article>
+        <article class="panel"><div class="panel-head"><div><p class="eyebrow">TRANSFORMATIONS</p><h3>Strand outputs</h3></div></div><div id="transformations" class="transform-list"></div></article>
+      </div>
+      <div class="result-grid">
+        <article class="panel gc-panel"><div class="panel-head"><div><p class="eyebrow">WINDOW PROFILE</p><h3>GC content</h3></div><label class="window-control">Window <input id="gc-window" type="number" min="3" value="30"> nt</label></div><div id="gc-chart" class="gc-chart"></div><p class="note">Window advances by one nucleotide. Ambiguous symbols are excluded from each window denominator.</p></article>
+        <article class="panel orf-panel"><div class="panel-head"><div><p class="eyebrow">CANDIDATE REGIONS</p><h3>Open reading frames</h3></div><span class="unit">ATG → in-frame stop</span></div><div id="orf-map"></div></article>
+      </div>
+      <article class="panel frames-panel"><div class="panel-head"><div><p class="eyebrow">TRANSLATION</p><h3>Six reading frames</h3></div><span class="unit">Standard genetic code · 1-letter amino-acid symbols</span></div><div id="frames"></div></article>
+      <article class="panel sequence-panel"><div class="panel-head"><div><p class="eyebrow">SEQUENCE VIEW</p><h3>5′ to 3′ nucleotide sequence</h3></div><span id="sequence-length" class="unit"></span></div><div id="sequence-view" class="sequence-view"></div></article>
+      <div id="fasta-records" class="fasta-records" hidden></div>
+    </section>
+    <section id="method" class="method"><p class="eyebrow">METHOD NOTE</p><p>Ambiguous IUPAC symbols are accepted and retained through complement and transcription. A, C, G and T percentages use only unambiguous nucleotides as the denominator; GC and AT percentages use the same denominator. Translation renders a codon as an amino acid only when every possible expansion encodes the same residue; otherwise it uses X. ORFs use ATG start and TAA, TAG or TGA stop codons. Coordinates are 1-based, inclusive, on the reported strand.</p></section>
+  </main>
+  <footer><span>HELIX LAB · DNA SEQUENCE ANALYZER</span><span>Calculations run locally. No sequence is uploaded.</span></footer>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
