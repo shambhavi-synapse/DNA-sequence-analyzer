@@ -4,7 +4,7 @@ import {codonUsage} from './codon.js';
 import {findMotif,findPalindromes,findTandemRepeats} from './motifs.js';
 import {alignGlobal} from './compare.js';
 import {EXAMPLES,HBB_FRAGMENT} from './examples.js';
-import {substituteBase,classifyCodonSubstitution,translateCodonContext} from './mutation.js';
+import {substituteBase,classifyCodonSubstitution,translateCodonContext} from './mutation.js?v=20261106-2';
 
 const $=selector=>document.querySelector(selector);
 const state={records:[],active:0,orfs:[],minimum:30};
