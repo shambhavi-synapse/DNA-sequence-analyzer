@@ -1,0 +1,3 @@
+/** Map alignment columns to 1-based input coordinates. Gaps have no coordinate. */
+export function alignmentColumns(a,b){if(a.length!==b.length)throw new Error('Aligned strings must have equal lengths.');let pa=0,pb=0;return [...a].map((base,i)=>{const other=b[i];return {column:i+1,a:base,b:other,positionA:base==='-'?null:++pa,positionB:other==='-'?null:++pb,kind:base==='-'||other==='-'?'gap':base===other?'match':'mismatch'};});}
+export function alignmentCSV(columns){return 'column,position_A,base_A,position_B,base_B,type\n'+columns.map(c=>[c.column,c.positionA??'',c.a,c.positionB??'',c.b,c.kind].join(',')).join('\n');}
