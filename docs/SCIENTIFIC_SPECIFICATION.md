@@ -16,13 +16,13 @@ Complement uses the IUPAC complement map. Reverse complement reverses the comple
 
 ## Translation and codon usage
 
-Translation uses NCBI translation table 1. Frames +1/+2/+3 read the supplied sequence from offsets 0/1/2. Frames −1/−2/−3 read the reverse complement from offsets 0/1/2. Incomplete terminal codons are omitted. An ambiguous codon is expanded across all possible concrete codons; a residue is displayed only when all expansions yield the same amino acid or stop, otherwise `X` is displayed.
+Translation uses NCBI translation table 1 by default, with table 2 (vertebrate mitochondrial code) available by explicit selection. Table 2 reassigns ATA to methionine, TGA to tryptophan, and AGA/AGG to stop. Frames +1/+2/+3 read the supplied sequence from offsets 0/1/2. Frames −1/−2/−3 read the reverse complement from offsets 0/1/2. Incomplete terminal codons are omitted. An ambiguous codon is expanded across all possible concrete codons; a residue is displayed only when all expansions yield the same amino acid or stop, otherwise `X` is displayed.
 
 Codon usage counts complete, unambiguous triplets in the selected frame. Its frequency denominator is the number of such codons; ambiguous triplets are reported separately and excluded. Counts include stop codons.
 
 ## Candidate ORFs and coordinates
 
-Candidate ORFs start at `ATG` and end at the first in-frame `TAA`, `TAG` or `TGA` on a strand. Every start that reaches that stop can yield a candidate, including nested candidates. Start and stop codons are included in the ORF length. The minimum is measured in nucleotides, including the stop. Analysis checks all six frames. Ambiguous codons cannot serve as a start or stop. Reverse-strand coordinates are mapped back to the original input. Coordinates are 1-based and inclusive. Candidate ORFs do not establish a gene or expressed protein.
+Candidate ORFs start at `ATG` and end at the first in-frame stop for the selected code: `TAA`, `TAG`, `TGA` for table 1; `TAA`, `TAG`, `AGA`, `AGG` for table 2. The current finder intentionally uses ATG-only initiation in both tables; alternate mitochondrial initiation codons are not modeled. Every start that reaches that stop can yield a candidate, including nested candidates. Start and stop codons are included in the ORF length. The minimum is measured in nucleotides, including the stop. Analysis checks all six frames. Ambiguous codons cannot serve as a start or stop. Reverse-strand coordinates are mapped back to the original input. Coordinates are 1-based and inclusive. Candidate ORFs do not establish a gene or expressed protein.
 
 ## Sliding-window GC
 
@@ -42,6 +42,6 @@ The comparison uses global Needleman-Wunsch dynamic programming with scores: exa
 
 The synthetic teaching sequence is clearly labelled and is not presented as a biological reference. The HBB example is the first 117 coding nucleotides from Homo sapiens HBB mRNA RefSeq NM_000518.5. Its c.20A>T example illustrates the GAG-to-GTG codon change. Protein residue numbering in mature hemoglobin commonly omits the initiating methionine, which is why the coding variant is called p.Glu6Val in the hemoglobin literature while transcript translation includes the initial methionine.
 
-## Excluded estimates
+## Short-oligonucleotide melting-temperature estimate
 
-Molecular mass and melting temperature are not currently calculated. The current interface does not ask for salt, strand concentration, oligonucleotide length constraints, terminal chemistry, or other conditions required to present those as scientifically meaningful measurements.
+For an unambiguous sequence of 4–14 nt, the interface shows the Wallace-rule estimate `2 × (A+T) + 4 × (G+C)` °C. This is a rough screening approximation for short oligonucleotides. It is not a measured melting temperature and does not incorporate nearest-neighbour enthalpy/entropy, salt concentration, strand concentration, mismatches, terminal chemistry, or assay conditions. Ambiguous or longer sequences do not receive an estimate. Molecular mass is not calculated.
