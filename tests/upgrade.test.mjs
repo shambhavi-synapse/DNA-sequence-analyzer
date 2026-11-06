@@ -1,0 +1,18 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {STANDARD_CODE} from '../src/translation.js';
+import {findMotif,findPalindromes,findTandemRepeats} from '../src/motifs.js';
+import {alignGlobal} from '../src/compare.js';
+import {codonUsage} from '../src/codon.js';
+test('exact motif search returns overlapping coordinates and optional reverse complement',()=>{assert.deepEqual(findMotif('ATATAT','ATA').map(x=>[x.start,x.end,x.strand]),[[1,3,'+'],[3,5,'+']]);assert.deepEqual(findMotif('AAGCTT','AAG',true).map(x=>[x.start,x.end,x.strand]),[[1,3,'+'],[4,6,'−']]);});
+test('motif patterns accept IUPAC but compare symbols literally',()=>{assert.equal(findMotif('AAGAA','AR').length,0);assert.equal(findMotif('ARAA','AR').length,1);assert.throws(()=>findMotif('ATG',''),/non-empty/)});
+test('palindromes are exact reverse-complement palindromes and skip ambiguity',()=>{assert.deepEqual(findPalindromes('ATGCATN',{minLength:6,maxLength:6}).map(x=>[x.start,x.end,x.motif]),[[1,6,'ATGCAT']]);});
+test('tandem repeats report exact adjacent copies with 1-based coordinates',()=>{assert.deepEqual(findTandemRepeats('GGATATATCC',{minUnit:2,maxUnit:2,minCopies:3}).map(x=>[x.start,x.end,x.unit,x.copies]),[[3,8,'AT',3]]);});
+test('Needleman-Wunsch aligns full sequences and reports identity over all columns',()=>{const r=alignGlobal('ACT','ACGT');assert.equal(r.alignedA,'AC-T');assert.equal(r.alignedB,'ACGT');assert.equal(r.matches,3);assert.equal(r.gaps,1);assert.equal(r.identity,75);});
+test('alignment handles substitutions, literal ambiguity symbols and length limits',()=>{assert.equal(alignGlobal('ACGN','ACGT').mismatches,1);assert.throws(()=>alignGlobal('ATG','ATG',{maxLength:2}),/limited/)});
+test('codon frequencies respect all six frame offsets and exclude ambiguous codons',()=>{const r=codonUsage('AATGGCNN', '+2');assert.equal(r.total,1);assert.equal(r.ambiguous,1);assert.equal(r.counts.ATG,1);assert.equal(codonUsage('AATGGC','−1').frame,'−1');});
+import {HBB_FRAGMENT,EXAMPLES} from '../src/examples.js';
+import {substituteBase,classifyCodonSubstitution} from '../src/mutation.js';
+test('HBB reference teaching fragment is accession-labelled and has expected variant site',()=>{assert.equal(EXAMPLES.hbb.sequence,HBB_FRAGMENT);assert.equal(HBB_FRAGMENT.length,117);assert.equal(HBB_FRAGMENT[19],'A');assert.equal(HBB_FRAGMENT.slice(18,21),'GAG')});
+test('HBB c.20A>T substitution changes glutamate codon to valine codon',()=>{const variant=substituteBase(HBB_FRAGMENT,20,'T');assert.equal(variant.sequence.slice(18,21),'GTG');assert.deepEqual(classifyCodonSubstitution('GAG','GTG'),{referenceCodon:'GAG',alternateCodon:'GTG',referenceAA:'E',alternateAA:'V',consequence:'missense'});});
+test('mutation classifications distinguish synonymous and nonsense changes',()=>{assert.equal(classifyCodonSubstitution('GCT','GCC').consequence,'synonymous');assert.equal(classifyCodonSubstitution('TGG','TAG').consequence,'nonsense');assert.throws(()=>classifyCodonSubstitution('GCN','GCC'),/unambiguous/)});
+test('all 64 standard code entries follow canonical table order',()=>{const order=['T','C','A','G'];const expected=['FFLLSSSSYY**CC*W','LLLLPPPPHHQQRRRR','IIIMTTTTNNKKSSRR','VVVVAAAADDEEGGGG'].join('');const codons=[];for(const a of order)for(const b of order)for(const c of order)codons.push(a+b+c);assert.equal(codons.map(codon=>STANDARD_CODE[codon]).join(''),expected);});
