@@ -1,29 +1,47 @@
 # Scientific specification
 
-## Input alphabet and parsing
+## Input and parsing
 
-Sequences accept uppercase or lowercase DNA IUPAC symbols `A C G T R Y S W K M B D H V N`. Whitespace is removed. Every other non-whitespace character is an error with its position in the normalized sequence. FASTA headers begin with `>` and each header must have at least one sequence symbol. Multiple records are supported. Input is retained in memory only; there is no network request.
+The parser accepts upper- and lowercase DNA IUPAC symbols `A C G T R Y S W K M B D H V N`. Whitespace is removed. All other symbols are rejected with their 1-based position in the normalized sequence. FASTA headers begin with `>` and each record must have at least one sequence symbol. Multi-record FASTA is supported. The application retains input in memory and makes no network request.
 
-## Composition
+## Composition and interpretation
 
-Total length counts every accepted symbol. Counts and percentages are reported for A/C/G/T. Their percentages, GC and AT percentages use the number of unambiguous A/C/G/T bases as denominator. Ambiguous bases are reported separately and excluded from those fractions, never silently removed from the sequence or length. Values are undefined when no unambiguous bases exist.
+Total length counts all accepted symbols. A/C/G/T counts and their percentages are reported. A/C/G/T percentages and GC/AT percentages use the number of unambiguous A/C/G/T bases as the denominator. Ambiguous symbols are reported separately and remain included in total length. A percentage is undefined when no unambiguous bases exist. GC is `(G+C)/(A+C+G+T) × 100`; AT is `(A+T)/(A+C+G+T) × 100`.
 
-## Strand operations
+Interpretive text describes composition and computational outputs. It does not infer expression, function, phenotype, or clinical meaning from sequence composition alone.
 
-Complement uses the IUPAC complement map. Reverse complement is the complement in reverse order. The coding-strand DNA-to-RNA operation substitutes U for T. Template-strand transcription first complements the input strand, then substitutes U for T. Both products are displayed 5′ to 3′. Reverse transcription is not implemented because RNA input is outside the accepted DNA alphabet.
+## Strand transformations
 
-## Translation
+Complement uses the IUPAC complement map. Reverse complement reverses the complemented symbols. Coding-strand DNA-to-RNA directly replaces T with U. Template-strand transcription first complements the supplied strand, then replaces T with U. RNA outputs are displayed 5′ to 3′. RNA input and reverse transcription are not supported because the input alphabet is DNA.
 
-Translation uses NCBI translation table 1, the standard genetic code. Frames +1/+2/+3 translate the supplied strand from offsets 0/1/2. Frames −1/−2/−3 translate the reverse complement from offsets 0/1/2. Incomplete terminal codons are omitted. For ambiguous codons, all possible concrete codons are enumerated: a residue is shown only if all expansions encode the same amino acid or stop; otherwise `X` is shown. A stop is `*`. These six translations are computational frames, not evidence of functional proteins.
+## Translation and codon usage
 
-## ORFs and coordinates
+Translation uses NCBI translation table 1. Frames +1/+2/+3 read the supplied sequence from offsets 0/1/2. Frames −1/−2/−3 read the reverse complement from offsets 0/1/2. Incomplete terminal codons are omitted. An ambiguous codon is expanded across all possible concrete codons; a residue is displayed only when all expansions yield the same amino acid or stop, otherwise `X` is displayed.
 
-Candidate ORFs start at `ATG` and end at the first in-frame `TAA`, `TAG` or `TGA` on that strand. Start and stop codons are included in ORF length. Only complete ORFs are reported. Minimum length is measured in nucleotides and includes the stop codon. Analysis examines all six frames and reports each ATG start that reaches the next in-frame stop, so nested candidates are included when they meet the length threshold. Coordinates are 1-based and inclusive relative to the input sequence, including reverse-strand coordinates mapped back to the input sequence. Candidates are not experimentally verified genes. Ambiguous codons cannot start or stop an ORF.
+Codon usage counts complete, unambiguous triplets in the selected frame. Its frequency denominator is the number of such codons; ambiguous triplets are reported separately and excluded. Counts include stop codons.
 
-## GC profile and limits
+## Candidate ORFs and coordinates
 
-The sliding-window profile advances one nucleotide and reports the fraction of G/C among A/C/G/T in each complete window. Ambiguity is excluded from each window denominator; windows with no unambiguous base are gaps. No window is shown if the selected window exceeds sequence length. Computation is client-side; very large sequences can consume browser memory and time. The sequence display caps rendered bases at 12,000 while calculations use the full input.
+Candidate ORFs start at `ATG` and end at the first in-frame `TAA`, `TAG` or `TGA` on a strand. Every start that reaches that stop can yield a candidate, including nested candidates. Start and stop codons are included in the ORF length. The minimum is measured in nucleotides, including the stop. Analysis checks all six frames. Ambiguous codons cannot serve as a start or stop. Reverse-strand coordinates are mapped back to the original input. Coordinates are 1-based and inclusive. Candidate ORFs do not establish a gene or expressed protein.
 
-## Validation status
+## Sliding-window GC
 
-The automated suite uses hand-checked edge cases and canonical genetic code entries. NCBI ORFfinder comparison has not yet been performed; its settings need to match this implementation's ATG-only start rule, all six frames, complete-ORF requirement, minimum length including stop, and coordinate convention. Do not interpret the tests alone as external validation.
+The window advances by one nucleotide. Each complete window reports `(G+C)/(A+C+G+T) × 100`; ambiguity is excluded from that window's denominator. A window with no unambiguous base has undefined GC and is omitted from the plotted line. Inputs shorter than three nucleotides do not show a profile. Very large sequences are analyzed locally; the rendered sequence viewer is capped at 12,000 nucleotides for responsiveness.
+
+## Motifs, palindromes, and repeats
+
+Exact motif search uses literal symbol matching; overlapping occurrences are reported. A reverse-complement search also searches the reverse-complemented motif and labels its strand. IUPAC letters in either input are treated as literal symbols in this exact mode, not expanded to possible bases.
+
+A palindrome is a 4–12 nt unambiguous substring that is exactly equal to its reverse complement. Tandem repeats are exact adjacent copies of a 1–6 nt unambiguous unit, with at least three copies. Hits use 1-based inclusive coordinates. These settings are fixed and visible in the interface.
+
+## Pairwise comparison
+
+The comparison uses global Needleman-Wunsch dynamic programming with scores: exact symbol match `+2`, mismatch `−1`, gap `−2`. It aligns complete sequences, supports IUPAC symbols as literal characters, and limits each sequence to 1,500 nt to bound browser memory. Reported identity is exact matches divided by all alignment columns, including gap columns. This is a simple global alignment, not a local database search or a biological homology claim.
+
+## Example sequences and mutation explorer
+
+The synthetic teaching sequence is clearly labelled and is not presented as a biological reference. The HBB example is the first 117 coding nucleotides from Homo sapiens HBB mRNA RefSeq NM_000518.5. Its c.20A>T example illustrates the GAG-to-GTG codon change. Protein residue numbering in mature hemoglobin commonly omits the initiating methionine, which is why the coding variant is called p.Glu6Val in the hemoglobin literature while transcript translation includes the initial methionine.
+
+## Excluded estimates
+
+Molecular mass and melting temperature are not currently calculated. The current interface does not ask for salt, strand concentration, oligonucleotide length constraints, terminal chemistry, or other conditions required to present those as scientifically meaningful measurements.
