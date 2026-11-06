@@ -1,0 +1,18 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {normalizeSequence,parseFasta,parseInput,countComposition,complement,reverseComplement,transcribeCodingStrand,transcribeTemplateStrand,slidingGC} from '../src/sequence.js';
+import {STANDARD_CODE,translateCodon,translateFrame,sixFrames,findORFs} from '../src/translation.js';
+test('normalizes whitespace and case',()=>assert.equal(normalizeSequence(' atg c\nN '),'ATGCN'));
+test('accepts all IUPAC DNA ambiguity codes and rejects invalid symbols with positions',()=>{assert.equal(normalizeSequence('ACGTRYSWKMBDHVN').length,15);assert.throws(()=>normalizeSequence('ACGX'),/"X" at position 4/)});
+test('parses multi-record FASTA, rejects data before header and empty record',()=>{assert.deepEqual(parseFasta('>a\nATG\n>b desc\nNRY'),[{header:'a',sequence:'ATG'},{header:'b desc',sequence:'NRY'}]);assert.throws(()=>parseFasta('ATG'),/header/);assert.throws(()=>parseFasta('>a\n>b\nATG'),/has no sequence/)});
+test('plain text and fasta dispatch',()=>assert.equal(parseInput('acgt','x')[0].sequence,'ACGT'));
+test('composition denominators exclude ambiguous bases',()=>{const c=countComposition('AACCGGTTNN');assert.equal(c.length,10);assert.equal(c.ambiguous,2);assert.equal(c.gc,50);assert.equal(c.at,50);assert.equal(c.percentages.A,25)});
+test('all IUPAC complements and reverse complement',()=>{assert.equal(complement('ACGTRYSWKMBDHVN'),'TGCAYRSWMKVHDBN');assert.equal(reverseComplement('ATGC'),'GCAT')});
+test('transcription distinguishes coding and template strands',()=>{assert.equal(transcribeCodingStrand('ATGC'),'AUGC');assert.equal(transcribeTemplateStrand('ATGC'),'UACG')});
+test('complete standard genetic code has established canonical codons',()=>{assert.equal(Object.keys(STANDARD_CODE).length,64);assert.equal(STANDARD_CODE.ATG,'M');assert.equal(STANDARD_CODE.TAA,'*');assert.equal(STANDARD_CODE.TGG,'W');assert.equal(STANDARD_CODE.GCT,'A')});
+test('ambiguous codons resolve only if all expansions agree',()=>{assert.equal(translateCodon('GCN'),'A');assert.equal(translateCodon('TAR'),'*');assert.equal(translateCodon('NNN'),'X')});
+test('translation omits incomplete trailing codons',()=>assert.equal(translateFrame('ATGGCCN',0),'MA'));
+test('six frames report all offsets and reverse-complement strand',()=>{const f=sixFrames('ATGAAATAG');assert.deepEqual(f.map(x=>x.label),['+1','+2','+3','−1','−2','−3']);assert.equal(f[0].protein,'MK*')});
+test('ORF detection, inclusive 1-based coordinates, in-frame stop, minimum length',()=>{assert.deepEqual(findORFs('CCCATGAAATAACCC',9).map(o=>({strand:o.strand,frame:o.frame,start:o.start,end:o.end,length:o.length,protein:o.protein})),[{strand:'+',frame:'+1',start:4,end:12,length:9,protein:'MK*'}]);assert.equal(findORFs('ATGTAA',7).length,0)});
+test('reverse strand ORF coordinate conversion',()=>{const sequence='TTATTTCAT';const o=findORFs(sequence,9);assert.equal(o.length,1);assert.equal(o[0].strand,'−');assert.equal(o[0].start,1);assert.equal(o[0].end,9);assert.equal(o[0].frame,'−1')});
+test('sliding GC uses per-window unambiguous denominator and 1-based positions',()=>assert.deepEqual(slidingGC('GNCAT',3),[{start:1,end:3,gc:100},{start:2,end:4,gc:50},{start:3,end:5,gc:100/3}]));
+test('empty input and malformed window are rejected',()=>{assert.throws(()=>normalizeSequence('  '),/Enter/);assert.throws(()=>slidingGC('ATG',0),/positive/)});
