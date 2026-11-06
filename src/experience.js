@@ -1,0 +1,4 @@
+// Navigation supplements existing analysis controls without modifying calculations.
+const results=document.querySelector('#results');
+const nav=document.createElement('nav');nav.className='results-nav';nav.setAttribute('aria-label','Analysis sections');
+for(const [label,selector] of [['Overview','#metrics'],['Composition','.composition-panel'],['GC profile','.gc-panel'],['ORFs','.orf-panel'],['Translation','.frames-panel'],['Sequence','#sequence-panel']]){const target=document.querySelector(selector);if(!target)continue;if(!target.id)target.id=`result-${label.toLowerCase().replaceAll(' ','-')}`;const link=document.createElement('a');link.href=`#${target.id}`;link.textContent=label;link.addEventListener('click',event=>{event.preventDefault();target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});nav.append(link);}results.querySelector('.results-title').after(nav);

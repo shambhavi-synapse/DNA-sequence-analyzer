@@ -8,7 +8,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <title>Helix Lab | DNA Sequence Analyzer</title>
   <link rel="stylesheet" href="styles.css?v=20261106-4">
-</head>
+<link rel="stylesheet" href="experience.css?v=1"></head>
 <body>
   <header class="topbar">
     <a class="brand" href="#analyze" aria-label="DNA Sequence Analyzer home"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path class="logo-rail" d="M27 3C27 6 9 9 9 12S27 18 27 21 9 27 9 30"/><path class="logo-rail" d="M9 3C9 6 27 9 27 12S9 18 9 21 27 27 27 30"/><path class="logo-rungs" d="M12 3h12M12 12h12M12 21h12M12 30h12"/></svg><span>HELIX <b>LAB</b></span></a>
@@ -18,8 +18,8 @@
   <main id="top">
     <div class="app-view" id="view-analyze" data-view="analyze">
     <section class="intro">
-      <div><p class="eyebrow">SEQUENCE WORKSPACE · DNA</p><h1>DNA Sequence Analyzer</h1><h2 class="intro-subtitle">Sequence analysis, translation, and comparison.</h2><p class="lede">Examine nucleotide composition, reading frames, coding regions, and sequence differences using browser-based analysis tools.</p><div class="intro-actions"><a class="primary-button" href="#analysis">Analyze a sequence <span>↓</span></a><button class="secondary-button" id="try-example">Try an example</button></div></div>
-      <svg class="helix-figure" viewBox="0 0 220 220" role="img" aria-label="Schematic double helix with two antiparallel backbones and regularly spaced base-pair rungs"><path class="helix-rail rail-back" d="M168.0,14.0L161.7,18.8L144.1,23.6L119.1,28.4L92.1,33.2L69.0,38.0L54.8,42.8L52.7,47.6L63.1,52.4L83.7,57.2L110.0,62.0L136.3,66.8L156.9,71.6L167.3,76.4L165.2,81.2L151.0,86.0L127.9,90.8L100.9,95.6L75.9,100.4L58.3,105.2L52.0,110.0L58.3,114.8L75.9,119.6L100.9,124.4L127.9,129.2L151.0,134.0L165.2,138.8L167.3,143.6L156.9,148.4L136.3,153.2L110.0,158.0L83.7,162.8L63.1,167.6L52.7,172.4L54.8,177.2L69.0,182.0L92.1,186.8L119.1,191.6L144.1,196.4L161.7,201.2L168.0,206.0"/><path class="helix-rail rail-front" d="M52.0,14.0L58.3,18.8L75.9,23.6L100.9,28.4L127.9,33.2L151.0,38.0L165.2,42.8L167.3,47.6L156.9,52.4L136.3,57.2L110.0,62.0L83.7,66.8L63.1,71.6L52.7,76.4L54.8,81.2L69.0,86.0L92.1,90.8L119.1,95.6L144.1,100.4L161.7,105.2L168.0,110.0L161.7,114.8L144.1,119.6L119.1,124.4L92.1,129.2L69.0,134.0L54.8,138.8L52.7,143.6L63.1,148.4L83.7,153.2L110.0,158.0L136.3,162.8L156.9,167.6L167.3,172.4L165.2,177.2L151.0,182.0L127.9,186.8L100.9,191.6L75.9,196.4L58.3,201.2L52.0,206.0"/><g class="helix-rungs">M163.6 18.0L56.4 18.0 M58.8 41.0L161.2 41.0 M121.3 64.0L98.7 64.0 M146.8 87.0L73.2 87.0 M52.0 110.0L168.0 110.0 M146.8 133.0L73.2 133.0 M121.3 156.0L98.7 156.0 M58.8 179.0L161.2 179.0 M163.6 202.0L56.4 202.0</g><text x="162" y="11">5′</text><text x="33" y="11">3′</text><text x="162" y="218">3′</text><text x="33" y="218">5′</text></svg>
+      <div><p class="eyebrow">SEQUENCE WORKSPACE · DNA</p><h1>A closer look<br>at your DNA.</h1><h2 class="intro-subtitle">Helix Lab · Sequence analysis</h2><p class="lede">Examine nucleotide composition, reading frames, coding regions, and sequence differences using browser-based analysis tools.</p><div class="intro-actions"><a class="primary-button" href="#analysis">Analyze a sequence <span>↓</span></a><button class="secondary-button" id="try-example">Try an example</button></div></div>
+<figure class="hero-art"><img src="assets/helix-hero.webp" width="1536" height="1024" alt="Conceptual artwork of a DNA double helix"><figcaption>Conceptual illustration · not an atomic model</figcaption></figure>
     </section>
     <section class="workspace" id="analysis" aria-labelledby="input-heading">
       <div class="section-head"><div><p class="eyebrow">01 / ANALYZE</p><h2 id="input-heading">Sequence input</h2><p class="section-copy">Paste a sequence or FASTA record. IUPAC ambiguity codes are retained and reported.</p></div></div>
@@ -76,11 +76,11 @@
       </div></section>
     </section></div>
     <div class="app-view" id="view-about" data-view="about" hidden>
-    <section id="about" class="about-section"><div><p class="eyebrow">ABOUT THIS PROJECT</p><h2>About this project</h2></div><div><p>I created this project to turn my interest in DNA sequence analysis into something practical and accessible.</p><p>The idea was to bring sequence analysis, scientific visualizations, and clear biological explanations together in one place, making it easier to examine DNA and understand what the results mean.</p><p class="creator">Created by Shambhavi <span>·</span> <a href="https://github.com/shambhavi-synapse" target="_blank" rel="noreferrer">GitHub ↗</a></p></div></section>
+    <section id="about" class="about-section"><div><p class="eyebrow">ABOUT THIS PROJECT</p><h2>About this project</h2></div><div><p>Helix Lab is an independent project developed to make DNA sequence analysis more accessible, visual, and interactive.</p><p>The idea was to bring sequence analysis, scientific visualizations, and clear biological explanations together in one place, making it easier to examine DNA and understand what the results mean.</p><p class="creator">Created by Shambhavi <span>·</span> <a href="https://github.com/shambhavi-synapse" target="_blank" rel="noreferrer">GitHub ↗</a></p></div></section>
     <section id="method" class="method"><p class="eyebrow">METHOD NOTE</p><p>Ambiguous IUPAC symbols remain in the sequence. Base percentages use only A/C/G/T as the denominator. Translation uses NCBI table 1; ambiguous codons resolve only when every expansion gives the same residue. ORFs use ATG and canonical stops, include stop codons in length, and report 1-based inclusive input coordinates. Candidate ORFs are not validated genes.</p><p>AI tools assisted development and review. The deployed application does not use AI services, and user sequences remain in the browser.</p></section>
     </div>
   </main>
   <footer><span>HELIX LAB · DNA SEQUENCE ANALYZER</span><span>Local calculations · No sequence is uploaded</span></footer>
   <script type="module" src="src/app.js?v=20261106-3"></script>
-</body>
+<script type="module" src="src/experience.js"></script></body>
 </html>
