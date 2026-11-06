@@ -2,14 +2,14 @@
 
 ## Automated checks
 
-Run with `node --test`. The suite uses Node's built-in test runner and no installed packages. It includes hand-checked examples for parsing, IUPAC ambiguities, base counts and denominators, complements, transcription, translation, six frames, forward and reverse ORF coordinates, sliding GC, exact motif matching, palindromes, tandem repeats, global alignment, codon usage, and the HBB c.20A>T example. A 64-codon fixture checks the standard code in canonical T/C/A/G codon order.
+Run with `node --test`. The suite uses Node's built-in test runner and no installed packages. The current suite contains 33 passing tests for parsing, IUPAC ambiguities, base counts and denominators, complements, transcription, standard and vertebrate mitochondrial translation, six frames, forward and reverse ORF coordinates, code-specific stop handling, sliding GC, exact motif matching, palindromes, tandem repeats, global alignment, codon usage, short-oligo estimate boundaries, workspace route resolution, synthetic teaching examples, and the HBB c.20A>T example. A 64-codon fixture checks the standard code in canonical T/C/A/G codon order.
 
 ## Independent references
 
 - Standard genetic code table: NCBI translation table 1, linked in the README.
 - HBB example fragment: NCBI RefSeq NM_000518.5; the embedded example is the coding fragment from positions 1–117.
-- ORF comparison: **pending**. Compare against NCBI ORFfinder using genetic code 1, ATG-only starts, all six frames, complete ORFs, matching minimum-length semantics, and equivalent nested-ORF settings. Record exact test input, settings, coordinates, and results here when performed.
+- ORF comparison: **pending**. An attempt to submit the local synthetic fixture to NCBI ORFfinder reached its viewer, but the viewer returned no usable result rows. The local test suite covers exact forward and reverse coordinates and table-dependent stop codons. Repeat the external comparison with genetic code 1, ATG-only starts, all six frames, complete ORFs, matching minimum-length semantics, and equivalent nested-ORF settings when the reference viewer returns results.
 
 ## Known limits
 
-The tests establish deterministic behavior for the covered cases, not complete biological validation. Global alignment uses fixed simple scores and literal IUPAC equality. Motif search is literal, while palindrome/repeat searches omit ambiguity. No molecular-weight or melting-temperature estimate is provided. Sequence viewer rendering is capped at 12,000 nt. NCBI ORFfinder comparison remains pending.
+The tests establish deterministic behavior for the covered cases, not complete biological validation. Global alignment uses fixed simple scores and literal IUPAC equality. Motif search is literal, while palindrome/repeat searches omit ambiguity. The displayed Wallace-rule value is only a rough short-oligonucleotide estimate and is not a measured melting temperature. Sequence viewer rendering is capped at 12,000 nt. NCBI ORFfinder comparison remains pending. Browser-based interaction and responsive layout checks are reported separately after live verification.
