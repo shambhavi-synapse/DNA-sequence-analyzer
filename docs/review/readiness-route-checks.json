@@ -1,0 +1,322 @@
+[
+  {
+    "active": "Analyze",
+    "overflow": false,
+    "route": "Analyze",
+    "theme": "Light",
+    "viewport": "320×844",
+    "width": 305
+  },
+  {
+    "active": "Compare",
+    "overflow": false,
+    "route": "Compare",
+    "theme": "Light",
+    "viewport": "320×844",
+    "width": 305
+  },
+  {
+    "active": "Explore",
+    "overflow": false,
+    "route": "Explore",
+    "theme": "Light",
+    "viewport": "320×844",
+    "width": 305
+  },
+  {
+    "active": "Molecular Notes",
+    "overflow": false,
+    "route": "Molecular Notes",
+    "theme": "Light",
+    "viewport": "320×844",
+    "width": 305
+  },
+  {
+    "active": "About",
+    "overflow": false,
+    "route": "About",
+    "theme": "Light",
+    "viewport": "320×844",
+    "width": 305
+  },
+  {
+    "active": "Analyze",
+    "overflow": false,
+    "route": "Analyze",
+    "theme": "Dark",
+    "viewport": "320×844",
+    "width": 305
+  },
+  {
+    "active": "Compare",
+    "overflow": false,
+    "route": "Compare",
+    "theme": "Dark",
+    "viewport": "320×844",
+    "width": 305
+  },
+  {
+    "active": "Explore",
+    "overflow": false,
+    "route": "Explore",
+    "theme": "Dark",
+    "viewport": "320×844",
+    "width": 305
+  },
+  {
+    "active": "Molecular Notes",
+    "overflow": false,
+    "route": "Molecular Notes",
+    "theme": "Dark",
+    "viewport": "320×844",
+    "width": 305
+  },
+  {
+    "active": "About",
+    "overflow": false,
+    "route": "About",
+    "theme": "Dark",
+    "viewport": "320×844",
+    "width": 305
+  },
+  {
+    "active": "Analyze",
+    "overflow": false,
+    "route": "Analyze",
+    "theme": "Light",
+    "viewport": "390×844",
+    "width": 375
+  },
+  {
+    "active": "Compare",
+    "overflow": false,
+    "route": "Compare",
+    "theme": "Light",
+    "viewport": "390×844",
+    "width": 375
+  },
+  {
+    "active": "Explore",
+    "overflow": false,
+    "route": "Explore",
+    "theme": "Light",
+    "viewport": "390×844",
+    "width": 375
+  },
+  {
+    "active": "Molecular Notes",
+    "overflow": false,
+    "route": "Molecular Notes",
+    "theme": "Light",
+    "viewport": "390×844",
+    "width": 375
+  },
+  {
+    "active": "About",
+    "overflow": false,
+    "route": "About",
+    "theme": "Light",
+    "viewport": "390×844",
+    "width": 375
+  },
+  {
+    "active": "Analyze",
+    "overflow": false,
+    "route": "Analyze",
+    "theme": "Dark",
+    "viewport": "390×844",
+    "width": 375
+  },
+  {
+    "active": "Compare",
+    "overflow": false,
+    "route": "Compare",
+    "theme": "Dark",
+    "viewport": "390×844",
+    "width": 375
+  },
+  {
+    "active": "Explore",
+    "overflow": false,
+    "route": "Explore",
+    "theme": "Dark",
+    "viewport": "390×844",
+    "width": 375
+  },
+  {
+    "active": "Molecular Notes",
+    "overflow": false,
+    "route": "Molecular Notes",
+    "theme": "Dark",
+    "viewport": "390×844",
+    "width": 375
+  },
+  {
+    "active": "About",
+    "overflow": false,
+    "route": "About",
+    "theme": "Dark",
+    "viewport": "390×844",
+    "width": 375
+  },
+  {
+    "active": "Analyze",
+    "overflow": false,
+    "route": "Analyze",
+    "theme": "Light",
+    "viewport": "768×1024",
+    "width": 753
+  },
+  {
+    "active": "Compare",
+    "overflow": false,
+    "route": "Compare",
+    "theme": "Light",
+    "viewport": "768×1024",
+    "width": 768
+  },
+  {
+    "active": "Explore",
+    "overflow": false,
+    "route": "Explore",
+    "theme": "Light",
+    "viewport": "768×1024",
+    "width": 753
+  },
+  {
+    "active": "Molecular Notes",
+    "overflow": false,
+    "route": "Molecular Notes",
+    "theme": "Light",
+    "viewport": "768×1024",
+    "width": 753
+  },
+  {
+    "active": "About",
+    "overflow": false,
+    "route": "About",
+    "theme": "Light",
+    "viewport": "768×1024",
+    "width": 753
+  },
+  {
+    "active": "Analyze",
+    "overflow": false,
+    "route": "Analyze",
+    "theme": "Dark",
+    "viewport": "768×1024",
+    "width": 753
+  },
+  {
+    "active": "Compare",
+    "overflow": false,
+    "route": "Compare",
+    "theme": "Dark",
+    "viewport": "768×1024",
+    "width": 768
+  },
+  {
+    "active": "Explore",
+    "overflow": false,
+    "route": "Explore",
+    "theme": "Dark",
+    "viewport": "768×1024",
+    "width": 753
+  },
+  {
+    "active": "Molecular Notes",
+    "overflow": false,
+    "route": "Molecular Notes",
+    "theme": "Dark",
+    "viewport": "768×1024",
+    "width": 753
+  },
+  {
+    "active": "About",
+    "overflow": false,
+    "route": "About",
+    "theme": "Dark",
+    "viewport": "768×1024",
+    "width": 753
+  },
+  {
+    "active": "Analyze",
+    "overflow": false,
+    "route": "Analyze",
+    "theme": "Light",
+    "viewport": "844×390",
+    "width": 829
+  },
+  {
+    "active": "Compare",
+    "overflow": false,
+    "route": "Compare",
+    "theme": "Light",
+    "viewport": "844×390",
+    "width": 829
+  },
+  {
+    "active": "Explore",
+    "overflow": false,
+    "route": "Explore",
+    "theme": "Light",
+    "viewport": "844×390",
+    "width": 829
+  },
+  {
+    "active": "Molecular Notes",
+    "overflow": false,
+    "route": "Molecular Notes",
+    "theme": "Light",
+    "viewport": "844×390",
+    "width": 829
+  },
+  {
+    "active": "About",
+    "overflow": false,
+    "route": "About",
+    "theme": "Light",
+    "viewport": "844×390",
+    "width": 829
+  },
+  {
+    "active": "Analyze",
+    "overflow": false,
+    "route": "Analyze",
+    "theme": "Dark",
+    "viewport": "844×390",
+    "width": 829
+  },
+  {
+    "active": "Compare",
+    "overflow": false,
+    "route": "Compare",
+    "theme": "Dark",
+    "viewport": "844×390",
+    "width": 829
+  },
+  {
+    "active": "Explore",
+    "overflow": false,
+    "route": "Explore",
+    "theme": "Dark",
+    "viewport": "844×390",
+    "width": 829
+  },
+  {
+    "active": "Molecular Notes",
+    "overflow": false,
+    "route": "Molecular Notes",
+    "theme": "Dark",
+    "viewport": "844×390",
+    "width": 829
+  },
+  {
+    "active": "About",
+    "overflow": false,
+    "route": "About",
+    "theme": "Dark",
+    "viewport": "844×390",
+    "width": 829
+  }
+]

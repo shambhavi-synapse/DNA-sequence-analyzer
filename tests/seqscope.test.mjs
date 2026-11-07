@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync,existsSync} from 'node:fs';
+import {HBB_FRAGMENT,EXAMPLES} from '../src/examples.js';
+import {sixFrames} from '../src/translation.js';
+const fixture=JSON.parse(readFileSync(new URL('./fixtures/hbb-refseq.json',import.meta.url)));
+test('HBB example matches independently retrieved RefSeq transcript interval',()=>{assert.equal(HBB_FRAGMENT,fixture.sequence);assert.equal(HBB_FRAGMENT.length,fixture.transcriptEnd-fixture.transcriptStart+1);assert.equal(fixture.cdsStart,fixture.transcriptStart);assert.equal(sixFrames(HBB_FRAGMENT)[0].protein,fixture.translation);assert.match(EXAMPLES.hbb.source,/51-167/);});
+test('HBB teaching substitution is c.20A>T and alters coding residue seven',()=>{assert.equal(HBB_FRAGMENT[19],'A');assert.equal(EXAMPLES['hbb-mut'].sequence[19],'T');assert.equal(sixFrames(HBB_FRAGMENT)[0].protein[6],'E');assert.equal(sixFrames(EXAMPLES['hbb-mut'].sequence)[0].protein[6],'V');});
+const luminance=hex=>{const c=hex.match(/[a-f0-9]{2}/gi).map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);return c[0]*.2126+c[1]*.7152+c[2]*.0722;};
+const ratio=(a,b)=>{const x=luminance(a),y=luminance(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05);};
+test('SeqScope text, accent and base palettes meet normal text contrast on sequence surface',()=>{for(const [bg,colors] of [['fcfaf5',['242323','675f56','a43c2c','7754a3','326a8a','956018','b34232']],['222326',['f4f0e8','c1b9b0','f09376','c6a3ef','8cc4e3','e5be74','f29a87']]])for(const color of colors)assert.ok(ratio(color,bg)>=4.5,`${color} on ${bg}: ${ratio(color,bg)}`);});
+test('All local HTML artwork and script/style assets exist and visible brand is SeqScope',()=>{const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');assert.doesNotMatch(html,/Helix Lab|HELIX LAB/);assert.match(html,/Explore the<br>architecture<br>of DNA/);for(const match of html.matchAll(/(?:src|href)="((?:assets\/|src\/)[^"?#]+)(?:\?[^"#]*)?"/g)){assert.ok(existsSync(new URL('../'+match[1],import.meta.url)),match[1]);}});
+import {windowAtFraction} from '../src/inspection.js';
+test('Chart pointer mapping respects full input axis and complete-window limits',()=>{assert.equal(windowAtFraction(0,39,30),1);assert.equal(windowAtFraction(1/38,39,30),2);assert.equal(windowAtFraction(1,39,30),10);assert.equal(windowAtFraction(-1,39,30),1);assert.equal(windowAtFraction(.5,12,12),1);assert.equal(windowAtFraction(.2,2,3),null);assert.equal(windowAtFraction(NaN,39,30),null);});

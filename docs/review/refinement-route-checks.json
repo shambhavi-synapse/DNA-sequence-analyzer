@@ -1,0 +1,122 @@
+[
+  {
+    "overflow": false,
+    "route": "Analyze",
+    "theme": "Light",
+    "width": "390"
+  },
+  {
+    "overflow": false,
+    "route": "Compare",
+    "theme": "Light",
+    "width": "390"
+  },
+  {
+    "overflow": false,
+    "route": "Explore",
+    "theme": "Light",
+    "width": "390"
+  },
+  {
+    "overflow": false,
+    "route": "Molecular Notes",
+    "theme": "Light",
+    "width": "390"
+  },
+  {
+    "overflow": false,
+    "route": "About",
+    "theme": "Light",
+    "width": "390"
+  },
+  {
+    "overflow": false,
+    "route": "Analyze",
+    "theme": "Dark",
+    "width": "390"
+  },
+  {
+    "overflow": false,
+    "route": "Compare",
+    "theme": "Dark",
+    "width": "390"
+  },
+  {
+    "overflow": false,
+    "route": "Explore",
+    "theme": "Dark",
+    "width": "390"
+  },
+  {
+    "overflow": false,
+    "route": "Molecular Notes",
+    "theme": "Dark",
+    "width": "390"
+  },
+  {
+    "overflow": false,
+    "route": "About",
+    "theme": "Dark",
+    "width": "390"
+  },
+  {
+    "overflow": false,
+    "route": "Analyze",
+    "theme": "Light",
+    "width": "768"
+  },
+  {
+    "overflow": false,
+    "route": "Compare",
+    "theme": "Light",
+    "width": "768"
+  },
+  {
+    "overflow": false,
+    "route": "Explore",
+    "theme": "Light",
+    "width": "768"
+  },
+  {
+    "overflow": false,
+    "route": "Molecular Notes",
+    "theme": "Light",
+    "width": "768"
+  },
+  {
+    "overflow": false,
+    "route": "About",
+    "theme": "Light",
+    "width": "768"
+  },
+  {
+    "overflow": false,
+    "route": "Analyze",
+    "theme": "Dark",
+    "width": "768"
+  },
+  {
+    "overflow": false,
+    "route": "Compare",
+    "theme": "Dark",
+    "width": "768"
+  },
+  {
+    "overflow": false,
+    "route": "Explore",
+    "theme": "Dark",
+    "width": "768"
+  },
+  {
+    "overflow": false,
+    "route": "Molecular Notes",
+    "theme": "Dark",
+    "width": "768"
+  },
+  {
+    "overflow": false,
+    "route": "About",
+    "theme": "Dark",
+    "width": "768"
+  }
+]
