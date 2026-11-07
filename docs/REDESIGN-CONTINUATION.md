@@ -34,3 +34,9 @@ Supplied replication/transcription/translation artwork integrated in matching ex
 
 ## Focused final refinement
 Explore now contains the existing interactive modules; Molecular Notes is reading-focused. Approved creator message, GenomeIndia/IBDC reference, softer geometry and smaller illustrations implemented.61tests pass. See FINAL-REFINEMENT.md for precise checks and limits. Keep PR10 and PR9 unmerged; refresh only existing preview appgprj_6aeefdee8804819187555f7f78007f69, preserving owner-private access. Source preview repository is separate from GitHub Pages.
+
+## 7 November 2026: Indian research and editorial refinement
+
+Resume on `review/seqscope-atlas`, draft PR #10, still stacked on unmerged PR #9. Read `docs/INDIAN-CONTENT-REVIEW.md` and `docs/INDIAN-SOURCES.json` before further content work. This pass integrates the Notes hero, moves Everyday Life earlier, varies process-art compositions, updates Shambhavi Tiwari in About only, and adds 14 India-affiliated research papers plus Indian teaching and data resources. Twenty of 35 unique Notes references are Indian-origin. Confirmed unrelated legacy ERV/G4 citations were corrected. No calculation engine changed.
+
+A browser-confirmed nested ORF map overlap was fixed with display-only subtracks in `src/orf-view.js`; order and scientific coordinates are preserved. Tests: 66/66, syntax and whitespace checks passed. Browser route/theme matrix and representative screenshots are in `docs/review/indian-atlas-*`. Review private preview only; main and GitHub Pages must remain untouched. Remaining: owner visual approval and any requested refinements, authenticated hosted interaction checks if the cloud browser remains at sign-in, physical-device/screen-reader/reduced-motion preference testing, and the previously pending external ORFfinder comparison. Logo stays the existing review candidate.
