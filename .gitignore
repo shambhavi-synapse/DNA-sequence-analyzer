@@ -1,0 +1,4 @@
+# Reproducible output and local-only preview state
+/dist/
+/preview/
+/.openai/
