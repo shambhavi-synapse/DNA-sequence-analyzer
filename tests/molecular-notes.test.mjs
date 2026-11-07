@@ -64,3 +64,17 @@ test('Essential Concepts are text-led and retain only small explanatory sequence
  assert.ok(notes.includes('assets/chromatin-editorial.webp'));
  assert.ok(concepts.includes('https://www.ncbi.nlm.nih.gov/books/NBK26850/'));
 });
+
+test('footer avoids sequence status claims and privacy information is scoped to input',()=>{
+ const footer=html.slice(html.indexOf('<footer>'));
+ assert.ok(!/No sequence is uploaded|Local calculations/.test(footer));
+ const input=html.slice(html.indexOf('id="analysis"'),html.indexOf('id="view-compare"'));
+ assert.ok(input.includes('Sequence text and FASTA files are processed on this device'));
+});
+
+test('theme bootstrap precedes styles and is loaded once before application modules',()=>{
+ assert.ok(html.indexOf('src="src/theme.js')<html.indexOf('rel="stylesheet"'));
+ assert.equal([...html.matchAll(/src="src\/theme.js/g)].length,1);
+ const app=readFileSync(new URL('../src/app.js',import.meta.url),'utf8');
+ assert.ok(!app.includes('initializeTheme'));
+});

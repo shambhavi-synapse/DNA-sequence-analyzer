@@ -5,7 +5,7 @@ export function routeFromHash(hash) {
   if (ROUTES.has(value)) return value;
   if (value === 'analysis' || value === 'results') return 'analyze';
   if (['molecular-explorers','base-pairing','codon-builder','mutation-lab'].includes(value)) return 'explore';
-  if (['molecular-notes', 'curious-dna', 'genetics-life', 'example-sources'].includes(value)) return 'notes';
+  if (['molecular-notes', 'curious-dna', 'genetics-life', 'example-sources', 'note-replication', 'note-transcription', 'note-translation'].includes(value)) return 'notes';
   if (value === 'method') return 'about';
   return 'analyze';
 }
