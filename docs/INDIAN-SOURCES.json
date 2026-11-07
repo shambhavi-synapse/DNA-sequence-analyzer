@@ -1,7 +1,7 @@
 {
   "nptel-molecular": {
     "url": "https://nptel.ac.in/courses/102103341",
-    "label": "Molecular biology · Vishal Trivedi, IIT Guwahati · NPTEL",
+    "label": "DNA and RNA mechanisms · NPTEL, IIT Guwahati",
     "kind": "teaching",
     "institution": "IIT Guwahati",
     "origin": "Indian institution or India-affiliated research collaboration",
@@ -9,7 +9,7 @@
   },
   "nptel-expression": {
     "url": "https://nptel.ac.in/courses/104108056",
-    "label": "Eukaryotic gene expression · P. N. Rangarajan, IISc · NPTEL",
+    "label": "Eukaryotic gene expression · NPTEL, IISc",
     "kind": "teaching",
     "institution": "IISc",
     "origin": "Indian institution or India-affiliated research collaboration",
@@ -21,14 +21,6 @@
       "DNA methylation",
       "mRNA splicing and processing"
     ]
-  },
-  "nagaraja": {
-    "url": "https://mcb.iisc.ac.in/research-single/prof-v-nagaraja",
-    "label": "V. Nagaraja laboratory · Mycobacterial transcription, IISc",
-    "kind": "research resource",
-    "institution": "IISc",
-    "origin": "Indian institution or India-affiliated research collaboration",
-    "verified_on": "2026-11-07"
   },
   "inda": {
     "url": "https://ibdc.dbt.gov.in/inda/",
@@ -48,7 +40,7 @@
   },
   "41099703": {
     "url": "https://doi.org/10.1093/nar/gkaf1019",
-    "label": "Nagraj et al. · Nucleic acids research (2025)",
+    "label": "RECQL5 and stalled replication forks · Nagraj et al., 2025",
     "kind": "research paper",
     "institution": "IISc",
     "doi": "10.1093/nar/gkaf1019",
@@ -72,7 +64,7 @@
   },
   "40200022": {
     "url": "https://doi.org/10.1038/s41477-025-01974-2",
-    "label": "Gandhivel et al. · Nature plants (2025)",
+    "label": "Histone H4 variation and salt stress in rice · Gandhivel et al., 2025",
     "kind": "research paper",
     "institution": "NCBS–TIFR, SASTRA and international collaborators",
     "doi": "10.1038/s41477-025-01974-2",
@@ -113,7 +105,7 @@
   },
   "25428892": {
     "url": "https://doi.org/10.1093/dnares/dsu039",
-    "label": "Yadav et al. · DNA research : an international journal for rapid publication of reports on genes and genomes (2015)",
+    "label": "Transposable-element markers in foxtail millet · Yadav et al., 2015",
     "kind": "research paper",
     "institution": "NIPGR",
     "doi": "10.1093/dnares/dsu039",
@@ -141,7 +133,7 @@
   },
   "31965981": {
     "url": "https://doi.org/10.1007/s12038-019-9977-0",
-    "label": "Pant et al. · Journal of biosciences (2020)",
+    "label": "Methylation and alternative splicing under hypoxia · Pant et al., 2020",
     "kind": "research paper",
     "institution": "IISER Bhopal",
     "doi": "10.1007/s12038-019-9977-0",
@@ -162,7 +154,7 @@
   },
   "26609070": {
     "url": "https://doi.org/10.1091/mbc.E15-05-0260",
-    "label": "Tadi et al. · Molecular biology of the cell (2016)",
+    "label": "Mitochondrial DNA break repair · Tadi et al., 2016",
     "kind": "research paper",
     "institution": "IISc",
     "doi": "10.1091/mbc.E15-05-0260",
@@ -190,7 +182,7 @@
   },
   "33084858": {
     "url": "https://doi.org/10.1093/dnares/dsaa024",
-    "label": "Javadekar et al. · DNA research : an international journal for rapid publication of reports on genes and genomes (2020)",
+    "label": "BG4 antibody specificity for G-quadruplexes · Javadekar et al., 2020",
     "kind": "research paper",
     "institution": "IISc",
     "doi": "10.1093/dnares/dsaa024",
@@ -216,7 +208,7 @@
   },
   "30247678": {
     "url": "https://doi.org/10.1093/nar/gky854",
-    "label": "Ghosh et al. · Nucleic acids research (2018)",
+    "label": "Recognition of telomeric G-quadruplex DNA · Ghosh & Singh, 2018",
     "kind": "research paper",
     "institution": "IISc",
     "doi": "10.1093/nar/gky854",
@@ -235,28 +227,9 @@
     "origin": "Indian institution or India-affiliated research collaboration",
     "verified_on": "2026-11-07"
   },
-  "11387230": {
-    "url": "https://doi.org/10.1093/emboj/20.11.2977",
-    "label": "Rao et al. · The EMBO journal (2001)",
-    "kind": "research paper",
-    "institution": "IISc",
-    "doi": "10.1093/emboj/20.11.2977",
-    "pmid": "11387230",
-    "authors": [
-      "A R Rao",
-      "U Varshney"
-    ],
-    "publication_year": "2001",
-    "title": "Specific interaction between the ribosome recycling factor and the elongation factor G from Mycobacterium tuberculosis mediates peptidyl-tRNA release and ribosome recycling in Escherichia coli.",
-    "affiliation_evidence": [
-      "Department of Microbiology and Cell Biology, Indian Institute of Science, Bangalore, 560 012, India."
-    ],
-    "origin": "Indian institution or India-affiliated research collaboration",
-    "verified_on": "2026-11-07"
-  },
   "33095885": {
     "url": "https://doi.org/10.1093/nar/gkaa923",
-    "label": "Jain et al. · Nucleic acids research (2021)",
+    "label": "IndiGenomes variant catalogue · Jain et al., 2021",
     "kind": "research paper",
     "institution": "CSIR–IGIB and CSIR–CCMB collaborators",
     "doi": "10.1093/nar/gkaa923",
@@ -391,7 +364,7 @@
   },
   "36813834": {
     "url": "https://doi.org/10.1038/s10038-023-01131-7",
-    "label": "Divakar et al. · Journal of human genetics (2023)",
+    "label": "Structural variation in 1,029 Indian genomes · Divakar et al., 2023",
     "kind": "research paper",
     "institution": "CSIR–IGIB and collaborators",
     "doi": "10.1038/s10038-023-01131-7",
@@ -437,59 +410,9 @@
     "origin": "Indian institution or India-affiliated research collaboration",
     "verified_on": "2026-11-07"
   },
-  "35903357": {
-    "url": "https://doi.org/10.3389/fgene.2022.878134",
-    "label": "Prakrithi et al. · Frontiers in genetics (2022)",
-    "kind": "research paper",
-    "institution": "CSIR–IGIB and IIT Jodhpur",
-    "doi": "10.3389/fgene.2022.878134",
-    "pmid": "35903357",
-    "authors": [
-      "P Prakrithi",
-      "Pankaj Jha",
-      "Jushta Jaiswal",
-      "Disha Sharma",
-      "Rahul C Bhoyar",
-      "Abhinav Jain",
-      "Mohamed Imran",
-      "Vigneshwar Senthilvel",
-      "Mohit Kumar Divakar",
-      "Anushree Mishra",
-      "Vinod Scaria",
-      "Sridhar Sivasubbu",
-      "Mitali Mukerji"
-    ],
-    "publication_year": "2022",
-    "title": "Landscape of Variability in Chemosensory Genes Associated With Dietary Preferences in Indian Population: Analysis of 1029 Indian Genomes.",
-    "affiliation_evidence": [
-      "CSIR- Institute of Genomics and Integrative Biology, Delhi, India.",
-      "CSIR- Institute of Genomics and Integrative Biology, Delhi, India.",
-      "CSIR- Institute of Genomics and Integrative Biology, Delhi, India.",
-      "CSIR- Institute of Genomics and Integrative Biology, Delhi, India.",
-      "Academy of Scientific and Innovative Research (AcSIR), Ghaziabad, India.",
-      "CSIR- Institute of Genomics and Integrative Biology, Delhi, India.",
-      "CSIR- Institute of Genomics and Integrative Biology, Delhi, India.",
-      "Academy of Scientific and Innovative Research (AcSIR), Ghaziabad, India.",
-      "CSIR- Institute of Genomics and Integrative Biology, Delhi, India.",
-      "Academy of Scientific and Innovative Research (AcSIR), Ghaziabad, India.",
-      "CSIR- Institute of Genomics and Integrative Biology, Delhi, India.",
-      "Academy of Scientific and Innovative Research (AcSIR), Ghaziabad, India.",
-      "CSIR- Institute of Genomics and Integrative Biology, Delhi, India.",
-      "Academy of Scientific and Innovative Research (AcSIR), Ghaziabad, India.",
-      "CSIR- Institute of Genomics and Integrative Biology, Delhi, India.",
-      "CSIR- Institute of Genomics and Integrative Biology, Delhi, India.",
-      "Academy of Scientific and Innovative Research (AcSIR), Ghaziabad, India.",
-      "CSIR- Institute of Genomics and Integrative Biology, Delhi, India.",
-      "Academy of Scientific and Innovative Research (AcSIR), Ghaziabad, India.",
-      "CSIR- Institute of Genomics and Integrative Biology, Delhi, India.",
-      "Department of Bioscience and Bioengineering, Indian Institute of Technology, Jodhpur, India."
-    ],
-    "origin": "Indian institution or India-affiliated research collaboration",
-    "verified_on": "2026-11-07"
-  },
   "21836184": {
     "url": "https://doi.org/10.1093/molbev/msr190",
-    "label": "Gallego Romero et al. · Molecular biology and evolution (2012)",
+    "label": "Lactase persistence across the Indian subcontinent · Gallego Romero et al., 2012",
     "kind": "research paper",
     "institution": "CSIR–CCMB and international collaborators",
     "doi": "10.1093/molbev/msr190",
@@ -524,7 +447,7 @@
   },
   "24244186": {
     "url": "https://doi.org/10.1371/journal.pgen.1003912",
-    "label": "Basu Mallick et al. · PLoS genetics (2013)",
+    "label": "SLC24A5 and South Asian skin pigmentation · Basu Mallick et al., 2013",
     "kind": "research paper",
     "institution": "CSIR–CCMB and international collaborators",
     "doi": "10.1371/journal.pgen.1003912",
@@ -560,52 +483,6 @@
     "origin": "Indian institution or India-affiliated research collaboration",
     "verified_on": "2026-11-07"
   },
-  "39736768": {
-    "url": "https://doi.org/10.1186/s13287-024-04117-0",
-    "label": "Chandraprabha et al. · Stem cell research & therapy (2024)",
-    "kind": "research paper",
-    "institution": "CSCR / inStem, CMC Vellore and collaborators",
-    "doi": "10.1186/s13287-024-04117-0",
-    "pmid": "39736768",
-    "authors": [
-      "Prathibha Babu Chandraprabha",
-      "Manoj Kumar K Azhagiri",
-      "Vigneshwaran Venkatesan",
-      "Wendy Magis",
-      "Kirti Prasad",
-      "Sevanthy Suresh",
-      "Aswin Anand Pai",
-      "Srujan Marepally",
-      "Alok Srivastava",
-      "Kumarasamypet Murugesan Mohankumar",
-      "David I K Martin",
-      "Saravanabhavan Thangavel"
-    ],
-    "publication_year": "2024",
-    "title": "Enhanced fetal hemoglobin production via dual-beneficial mutation editing of the HBG promoter in hematopoietic stem and progenitor cells for β-hemoglobinopathies.",
-    "affiliation_evidence": [
-      "Centre for Stem Cell Research (CSCR), A Unit of InStem Bengaluru, Christian Medical College Campus, Vellore, Tamil Nadu, 632002, India.",
-      "Manipal Academy of Higher Education, Manipal, Karnataka, 576104, India.",
-      "Centre for Stem Cell Research (CSCR), A Unit of InStem Bengaluru, Christian Medical College Campus, Vellore, Tamil Nadu, 632002, India.",
-      "Manipal Academy of Higher Education, Manipal, Karnataka, 576104, India.",
-      "Centre for Stem Cell Research (CSCR), A Unit of InStem Bengaluru, Christian Medical College Campus, Vellore, Tamil Nadu, 632002, India.",
-      "Manipal Academy of Higher Education, Manipal, Karnataka, 576104, India.",
-      "Children's Hospital Oakland Research Institute, UCSF Benioff Children's Hospital Oakland, Oakland, CA, 94609, USA.",
-      "Centre for Stem Cell Research (CSCR), A Unit of InStem Bengaluru, Christian Medical College Campus, Vellore, Tamil Nadu, 632002, India.",
-      "Manipal Academy of Higher Education, Manipal, Karnataka, 576104, India.",
-      "Centre for Stem Cell Research (CSCR), A Unit of InStem Bengaluru, Christian Medical College Campus, Vellore, Tamil Nadu, 632002, India.",
-      "Manipal Academy of Higher Education, Manipal, Karnataka, 576104, India.",
-      "Department of Hematology, Christian Medical College, Vellore, Tamil Nadu, 632004, India.",
-      "Centre for Stem Cell Research (CSCR), A Unit of InStem Bengaluru, Christian Medical College Campus, Vellore, Tamil Nadu, 632002, India.",
-      "Centre for Stem Cell Research (CSCR), A Unit of InStem Bengaluru, Christian Medical College Campus, Vellore, Tamil Nadu, 632002, India.",
-      "Department of Hematology, Christian Medical College, Vellore, Tamil Nadu, 632004, India.",
-      "Centre for Stem Cell Research (CSCR), A Unit of InStem Bengaluru, Christian Medical College Campus, Vellore, Tamil Nadu, 632002, India.",
-      "Children's Hospital Oakland Research Institute, UCSF Benioff Children's Hospital Oakland, Oakland, CA, 94609, USA.",
-      "Centre for Stem Cell Research (CSCR), A Unit of InStem Bengaluru, Christian Medical College Campus, Vellore, Tamil Nadu, 632002, India. sthangavel@cmcvellore.ac.in."
-    ],
-    "origin": "Indian institution or India-affiliated research collaboration",
-    "verified_on": "2026-11-07"
-  },
   "genomeindia-update": {
     "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2112778",
     "label": "Department of Biotechnology update on GenomeIndia",
@@ -613,5 +490,31 @@
     "institution": "Department of Biotechnology, Government of India",
     "origin": "Indian institution",
     "verified_on": "2026-11-07"
+  },
+  "28463980": {
+    "url": "https://doi.org/10.1371/journal.pgen.1006754",
+    "label": "Transcription and DNA topology · Ahmed et al., 2017",
+    "kind": "research paper",
+    "institution": "IISc, JNCASR and EPFL collaboration",
+    "doi": "10.1371/journal.pgen.1006754",
+    "pmid": "28463980",
+    "authors": [
+      "Wareed Ahmed",
+      "Claudia Sala",
+      "Shubhada R Hegde",
+      "Rajiv Kumar Jha",
+      "Stewart T Cole",
+      "Valakunja Nagaraja"
+    ],
+    "publication_year": "2017",
+    "title": "Transcription facilitated genome-wide recruitment of topoisomerase I and DNA gyrase",
+    "affiliation_evidence": [
+      "Department of Microbiology and Cell Biology, Indian Institute of Science, Bangalore, India.",
+      "Ecole Polytechnique Federale de Lausanne, Global Health Institute, Station 19, Lausanne, Switzerland.",
+      "Jawaharlal Nehru Centre for Advanced Scientific Research, Bangalore, India."
+    ],
+    "origin": "Indian institution or India-affiliated research collaboration",
+    "verified_on": "2026-11-07",
+    "metadata_source": "https://pubmed.ncbi.nlm.nih.gov/28463980/"
   }
 }
