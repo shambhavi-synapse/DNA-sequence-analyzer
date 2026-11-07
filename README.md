@@ -1,4 +1,4 @@
-# Helix Lab: DNA Sequence Analyzer
+# SeqScope: DNA Sequence Analyzer
 
 A static, client-side bioinformatics workspace for sequence composition, strand transformations, six-frame translation, candidate ORFs, motifs, codon usage, and pairwise comparison. DNA stays in the browser. The deployed site has no backend, analytics, AI service, paid API, or account requirement.
 
@@ -74,3 +74,7 @@ The repository uses GitHub Actions and GitHub Pages. No build service or paid ru
 ## Project and attribution
 
 Created by **Shambhavi**. The idea was to bring sequence analysis, scientific visualizations, and clear biological explanations together in one place. AI tools assisted development and review; the deployed scientific calculations execute locally without AI services.
+
+## SeqScope visual identity and verification
+
+SeqScope retains the existing browser-local scientific engine and repository URL. Its graphite, vermilion and ivory interface includes linked GC/ORF/sequence inspection, an inline six-frame codon inspector, responsive nucleotide rows and locally bundled artwork. See [the refinement verification record](docs/SEQSCOPE-VALIDATION.md) for executed checks, source provenance and limitations. Logo variants are in `assets/seqscope-*.svg`; design tokens and responsive refinements are in `seqscope.css`.
