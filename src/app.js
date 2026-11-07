@@ -8,7 +8,7 @@ import {findMotif,findPalindromes,findTandemRepeats} from './motifs.js';
 import {alignGlobal} from './compare.js';
 import {EXAMPLES,HBB_FRAGMENT} from './examples.js?v=seqscope-1';
 import {substituteBase,classifyCodonSubstitution,translateCodonContext} from './mutation.js?v=20261106-2';
-import {initializeNavigation} from './navigation.js?v=release-2';
+import {initializeNavigation} from './navigation.js?v=refinement-1';
 import {initializeTheme} from './theme.js?v=seqscope-1';
 import {sequenceProperties} from './properties.js';
 

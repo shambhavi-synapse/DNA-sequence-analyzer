@@ -31,3 +31,6 @@ Resume from `review/seqscope-atlas`, draft PR10 based on PR9's audit branch. Rec
 
 ## Additional asset checkpoint
 Supplied replication/transcription/translation artwork integrated in matching existing Molecular Notes content, preserving aspect ratios. Attachment logo retained as reference only. Review details: docs/ATTACHED-ASSET-REVIEW.md. All60 regression tests passed; desktop/tablet/mobile light/dark image checks passed. Continue review/seqscope-atlas, PR10. No merge/deployment without approval.
+
+## Focused final refinement
+Explore now contains the existing interactive modules; Molecular Notes is reading-focused. Approved creator message, GenomeIndia/IBDC reference, softer geometry and smaller illustrations implemented.61tests pass. See FINAL-REFINEMENT.md for precise checks and limits. Keep PR10 and PR9 unmerged; refresh only existing preview appgprj_6aeefdee8804819187555f7f78007f69, preserving owner-private access. Source preview repository is separate from GitHub Pages.

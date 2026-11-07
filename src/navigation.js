@@ -1,10 +1,11 @@
-const ROUTES = new Set(['analyze', 'compare', 'notes', 'about']);
+const ROUTES = new Set(['analyze', 'compare', 'explore', 'notes', 'about']);
 
 export function routeFromHash(hash) {
   const value = String(hash || '').replace(/^#/, '');
   if (ROUTES.has(value)) return value;
   if (value === 'analysis' || value === 'results') return 'analyze';
-  if (['molecular-notes', 'curious-dna', 'genetics-life', 'example-sources', 'molecular-explorers'].includes(value)) return 'notes';
+  if (['molecular-explorers','base-pairing','codon-builder','mutation-lab'].includes(value)) return 'explore';
+  if (['molecular-notes', 'curious-dna', 'genetics-life', 'example-sources'].includes(value)) return 'notes';
   if (value === 'method') return 'about';
   return 'analyze';
 }
