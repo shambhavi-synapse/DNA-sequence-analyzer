@@ -24,3 +24,6 @@ Molecular Atlas: six new precise SVG specimens cover A-to-I RNA editing, CpG mar
 
 ## Browser evidence
 Desktop 1363×936 and mobile iframe390×844 inspected with Manrope loaded. Mobile all four routes passed light/dark overflow checks (clientWidth and scrollWidth both375). Confirmed synthetic39nt/GC56.41% and template ATGC→GCAU. Screenshot: [desktop atlas review](review/atlas-desktop.jpg). Remote draft PR10 is stacked on PR9; its tree matches the locally verified integration. No merge or deployment authorized.
+
+## Supplied artwork integration
+Completed the replication/transcription placement item using the newly supplied files. Also replaced the earlier conceptual translation image with the supplied translation composition. See ATTACHED-ASSET-REVIEW.md for per-file decisions, scientific limitations, asset sizes and browser checks. Logo attachment remains a reference; no logo approval is assumed. All60 tests passed after this image/layout batch.

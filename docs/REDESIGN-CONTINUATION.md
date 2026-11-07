@@ -28,3 +28,6 @@ The former redesign was merged to main as f6173e3. The new focused phase uses `r
 
 ## Latest owner-directed checkpoint: Molecular Atlas review
 Resume from `review/seqscope-atlas`, draft PR10 based on PR9's audit branch. Recovered prior local SeqScope commits, independently ran PR9's55 tests, reconciled UI conflicts, and ran integrated60 tests. Manrope, logo candidate and six atlas SVG specimens are implemented. See docs/ATLAS-REVIEW.md for exact remaining tasks and screenshot. The latest owner instruction supersedes older release instructions: do not merge PR9 or any other work, and do not deploy, without explicit approval. Main/public site are unchanged in this session.
+
+## Additional asset checkpoint
+Supplied replication/transcription/translation artwork integrated in matching existing Molecular Notes content, preserving aspect ratios. Attachment logo retained as reference only. Review details: docs/ATTACHED-ASSET-REVIEW.md. All60 regression tests passed; desktop/tablet/mobile light/dark image checks passed. Continue review/seqscope-atlas, PR10. No merge/deployment without approval.
