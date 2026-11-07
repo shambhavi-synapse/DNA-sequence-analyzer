@@ -25,3 +25,6 @@ Fixed deep-link route preservation and scrolling. Fixed mobile composition legen
 
 ## SeqScope phase, 2026-11-07
 The former redesign was merged to main as f6173e3. The new focused phase uses `redesign/seqscope`. Brand, themes, analyzer inspection controls, responsive chart geometry, original ribosome artwork, HBB coordinate corrections and regression checks are documented in `docs/SEQSCOPE-VALIDATION.md`. Historical pending lists above are not the current branch specification. External ORFfinder validation and physical-device testing remain explicitly unclaimed. Local QA completed; merge and public deployment verification are the release steps.
+
+## Latest owner-directed checkpoint: Molecular Atlas review
+Resume from `review/seqscope-atlas`, draft PR10 based on PR9's audit branch. Recovered prior local SeqScope commits, independently ran PR9's55 tests, reconciled UI conflicts, and ran integrated60 tests. Manrope, logo candidate and six atlas SVG specimens are implemented. See docs/ATLAS-REVIEW.md for exact remaining tasks and screenshot. The latest owner instruction supersedes older release instructions: do not merge PR9 or any other work, and do not deploy, without explicit approval. Main/public site are unchanged in this session.

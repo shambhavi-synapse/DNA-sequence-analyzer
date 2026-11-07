@@ -21,3 +21,6 @@ Molecular Atlas: six new precise SVG specimens cover A-to-I RNA editing, CpG mar
 3. Review available replication/transcription artwork against the educational text before integrating it. No claim that other-conversation artwork has been imported.
 4. Full keyboard/screen-reader and physical-device walkthrough. ORFfinder external comparison remains pending.
 5. Obtain explicit owner approval before any main merge or deployment, including PR 9.
+
+## Browser evidence
+Desktop 1363×936 and mobile iframe390×844 inspected with Manrope loaded. Mobile all four routes passed light/dark overflow checks (clientWidth and scrollWidth both375). Confirmed synthetic39nt/GC56.41% and template ATGC→GCAU. Screenshot: [desktop atlas review](review/atlas-desktop.jpg). Remote draft PR10 is stacked on PR9; its tree matches the locally verified integration. No merge or deployment authorized.
