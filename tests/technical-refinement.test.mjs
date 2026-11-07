@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { findORFs, translateFrame } from '../src/translation.js';
-import { reverseComplement } from '../src/sequence.js';
+import { reverseComplement, normalizeSequence } from '../src/sequence.js';
 import { alignGlobal } from '../src/compare.js';
 
 // Independent translation of individual candidate intervals checks that
@@ -44,4 +44,13 @@ test('alignment validates scores and rejects numeric overflow',()=>{
   const valid=alignGlobal('ACT','ACGT',{match:2,mismatch:-1,gap:-2});
   assert.equal(valid.identity,75);
   assert.equal(valid.gaps,1);
+});
+
+test('invalid-symbol diagnostics cap examples but retain accurate positions',()=>{
+  assert.throws(()=>normalizeSequence('A?T!X$%#GG'), error=>
+    /"\?" at position 2/.test(error.message) &&
+    /"!" at position 4/.test(error.message) &&
+    /"%" at position 7/.test(error.message) &&
+    /…/.test(error.message));
+  assert.equal(normalizeSequence('ATGNN'),'ATGNN');
 });
