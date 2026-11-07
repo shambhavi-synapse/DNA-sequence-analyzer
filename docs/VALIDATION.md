@@ -4,6 +4,12 @@
 
 Run with `node --test`. The suite uses Node's built-in test runner and no installed packages. The automated suite tests parsing, IUPAC ambiguities, base counts and denominators, complements, transcription, standard and vertebrate mitochondrial translation, six frames, forward and reverse ORF coordinates, code-specific stop handling, sliding GC, exact motif matching, palindromes, tandem repeats, global alignment, codon usage, short-oligo estimate boundaries, workspace route resolution, synthetic teaching examples, and the HBB c.20A>T example. A 64-codon fixture checks the standard code in canonical T/C/A/G codon order. Separate regression fixtures independently check template-strand 5′→3′ orientation, truly single-base substitutions, unchanged and stop-related codon classifications, GC boundary cases, nested and reverse-frame ORFs, ambiguous codon translation, overlapping motif hits, and alignment edge cases.
 
+## Technical regression coverage
+
+`tests/technical-refinement.test.mjs` verifies that cached ORF frame translations reproduce independently translated candidate intervals, including nested and reverse-strand candidates, and that alignment rejects fractional, invalid, or overflowing scoring parameters. It also checks bounded invalid-symbol diagnostics. The ORF map limits rendered marks to the first 250 candidate results without changing the scientific candidate count. FASTA record selection exposes its active button via `aria-pressed`.
+
+The repository has no compilation or bundling step; `node --test` is the supported automated verification command. A passing test run does not establish browser-level accessibility or rendering performance.
+
 ## Independent references
 
 - Standard genetic code table: NCBI translation table 1, linked in the README.
