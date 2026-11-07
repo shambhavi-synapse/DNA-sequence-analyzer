@@ -7,7 +7,7 @@ test('parses multi-record FASTA, rejects data before header and empty record',()
 test('plain text and fasta dispatch',()=>assert.equal(parseInput('acgt','x')[0].sequence,'ACGT'));
 test('composition denominators exclude ambiguous bases',()=>{const c=countComposition('AACCGGTTNN');assert.equal(c.length,10);assert.equal(c.ambiguous,2);assert.equal(c.gc,50);assert.equal(c.at,50);assert.equal(c.percentages.A,25)});
 test('all IUPAC complements and reverse complement',()=>{assert.equal(complement('ACGTRYSWKMBDHVN'),'TGCAYRSWMKVHDBN');assert.equal(reverseComplement('ATGC'),'GCAT')});
-test('transcription distinguishes coding and template strands',()=>{assert.equal(transcribeCodingStrand('ATGC'),'AUGC');assert.equal(transcribeTemplateStrand('ATGC'),'UACG')});
+test('transcription distinguishes coding and template strands',()=>{assert.equal(transcribeCodingStrand('ATGC'),'AUGC');assert.equal(transcribeTemplateStrand('ATGC'),'GCAU')});
 test('complete standard genetic code has established canonical codons',()=>{assert.equal(Object.keys(STANDARD_CODE).length,64);assert.equal(STANDARD_CODE.ATG,'M');assert.equal(STANDARD_CODE.TAA,'*');assert.equal(STANDARD_CODE.TGG,'W');assert.equal(STANDARD_CODE.GCT,'A')});
 test('ambiguous codons resolve only if all expansions agree',()=>{assert.equal(translateCodon('GCN'),'A');assert.equal(translateCodon('TAR'),'*');assert.equal(translateCodon('NNN'),'X')});
 test('translation omits incomplete trailing codons',()=>assert.equal(translateFrame('ATGGCCN',0),'MA'));
