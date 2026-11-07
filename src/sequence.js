@@ -5,7 +5,7 @@ export function normalizeSequence(input) {
   const normalized=input.replace(/\s/g,'').toUpperCase();
   if (!normalized) throw new Error('Enter a DNA sequence or choose a FASTA file.');
   const invalid=[];
-  for (let i=0;i<normalized.length;i++) if (!IUPAC[normalized[i]]) invalid.push({symbol:normalized[i],position:i+1});
+  for (let i=0;i<normalized.length;i++) if (!IUPAC[normalized[i]]) { invalid.push({symbol:normalized[i],position:i+1}); if (invalid.length===6) break; }
   if (invalid.length) throw new Error(`Invalid character${invalid.length>1?'s':''}: ${invalid.slice(0,5).map(x=>`${JSON.stringify(x.symbol)} at position ${x.position}`).join(', ')}${invalid.length>5?'…':''}. Use DNA bases or IUPAC ambiguity symbols.`);
   return normalized;
 }
