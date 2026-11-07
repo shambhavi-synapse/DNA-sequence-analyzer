@@ -31,7 +31,7 @@ test('reverse coding orientation correctly maps staggered starts',()=>{
   const sequence=reverseComplement('CCATGATGTAAGG');
   const candidates=findORFs(sequence,6).filter(o=>o.strand==='−');
   assert.deepEqual(candidates.map(o=>[o.start,o.end,o.protein]),[
-    [3,11,'MM*'],[6,11,'M*']
+    [3,8,'M*'],[3,11,'MM*']
   ]);
 });
 test('alignment validates scores and rejects numeric overflow',()=>{
