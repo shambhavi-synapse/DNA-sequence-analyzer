@@ -67,3 +67,5 @@ button,a,input,textarea,select{transition:background-color .2s,border-color .2s,
 .orf-map-scroll{max-height:360px;overflow:auto;scrollbar-gutter:stable;margin:12px 0}.orf-map-scroll .orf-map-svg{height:auto;min-height:0;margin:0}.orf-map-scroll:focus-visible{outline-offset:-3px}:root[data-theme] .orf-item{background:var(--paper);color:var(--text)}:root[data-theme] .orf-item:hover{background:var(--soft)}
 .orf-map-scroll .orf-map-svg text{font-family:Manrope,Arial,sans-serif;font-size:18px!important}.gc-chart svg text{font-family:Manrope,Arial,sans-serif;font-size:17px!important}.inspector,.orf-detail,#gc-window-detail{font-family:Manrope,Arial,sans-serif}:root[data-theme] .orf-item .strand{background:var(--soft);color:var(--text);font:13px Manrope,Arial,sans-serif}
 .alignment-stats>span,.alignment-stats small,.comparison-method{font-family:Manrope,Arial,sans-serif}.alignment-stats>span{font-size:14px}
+/* Fact numbers carry no scientific meaning and must not collide with the heading. */
+.curious-card .fact-mark{display:none}.sources-section p{font-size:14px!important;line-height:1.8}
