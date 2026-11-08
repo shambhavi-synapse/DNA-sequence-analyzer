@@ -1,5 +1,7 @@
 # SeqScope: DNA Sequence Analyzer
 
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/branding/seqscope-logo-dark.svg"><img src="assets/branding/seqscope-logo-light.svg" width="220" alt="SeqScope"></picture>
+
 A static, client-side bioinformatics workspace for sequence composition, strand transformations, six-frame translation, candidate ORFs, motifs, codon usage, and pairwise comparison. DNA stays in the browser. The deployed site has no backend, analytics, AI service, paid API, or account requirement.
 
 **Live site:** https://shambhavi-synapse.github.io/DNA-sequence-analyzer/  
@@ -86,3 +88,11 @@ Created by **Shambhavi**. The idea was to bring sequence analysis, scientific vi
 ## SeqScope visual identity and verification
 
 SeqScope retains the existing browser-local scientific engine and repository URL. Its graphite, vermilion and ivory interface includes linked GC/ORF/sequence inspection, an inline six-frame codon inspector, responsive nucleotide rows and locally bundled artwork. See [the refinement verification record](docs/SEQSCOPE-VALIDATION.md) for executed checks, source provenance and limitations. Logo variants are in `assets/seqscope-*.svg`; design tokens and responsive refinements are in `seqscope.css`.
+
+## Official branding and printable reports
+
+The approved SeqScope mark is traced from the owner's reference artwork, including its original wordmark outlines. Stacked, horizontal, symbol-only, light, dark and print variants are in `assets/branding/`. The source reference and optional development tracing script are preserved; they are not build dependencies.
+
+Print Report and normal browser printing use the same dedicated A4 report. It includes the official logo as a real SVG image, complete sequence transformations, all six translations, complete candidate ORF tables, codon usage and current pattern results. Full strings are retained beyond screen display caps. A verified sample is in [the sample report PDF](docs/review/seqscope-sample-report.pdf). Browser printing remains entirely local.
+
+The public GitHub Pages repository path is case-sensitive: use **DNA-sequence-analyzer** in the live URL.

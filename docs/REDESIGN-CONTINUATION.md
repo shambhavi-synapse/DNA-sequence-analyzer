@@ -1,3 +1,13 @@
+# Latest checkpoint: approved logo and production release, 8 November 2026
+
+The owner now explicitly authorizes merging the verified release and deploying to the existing GitHub Pages site. This supersedes the historical restrictions below. Work is on `review/seqscope-atlas`, PR #10, preserving PR #9 ancestry and all four scientific engines unchanged. The official approved-image trace, icons and A4 print report are implemented in actual source. See `LOGO-PRINT-RELEASE.md` for evidence and limitations. Exact GitHub/staging/production SHAs are recorded in PR #10 after synchronization.
+
+124 tests pass. Production build contains 66 application files plus a deterministic release manifest. The 39 nt sample PDF has three A4 pages; a 2,000 nt stress report has six pages without horizontal text clipping. Browser-native Save-as-PDF remains unavailable to automation; the actual prepared report HTML was rendered and inspected using WeasyPrint 70. Do not describe that as a native Chrome PDF download.
+
+Release route: stage the exact tree, retarget PR #10 to main and merge normally so PR #9 is included in one main update. This avoids auto-deploying an intermediate audit-only website. Verify the case-sensitive public URL `https://shambhavi-synapse.github.io/DNA-sequence-analyzer/`. Preserve branches and the old main baseline for rollback. No paid dependencies, DNS or hosting migration.
+
+---
+
 # Latest checkpoint: caption and schematic correction, 8 November 2026
 
 Continue on `review/seqscope-atlas`, draft PR #10, stacked on draft PR #9. The final synchronized GitHub revision and private preview receipt are recorded in PR #10. No merge or production release is authorized.

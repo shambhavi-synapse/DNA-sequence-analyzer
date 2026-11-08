@@ -1,6 +1,6 @@
 # Controlled release of SeqScope
 
-Status: reviewable private staging, not approved for public release. Neither PR may be merged and GitHub Pages must remain unchanged until the owner explicitly approves. The current logo is deliberately preserved for a separate design task.
+Status: the owner explicitly authorized the completed, verified SeqScope production release on 8 November 2026. This supersedes the earlier preview-only restriction. The approved logo and print report are now integrated. The exact candidate, staging receipt and production merge SHA are recorded in PR #10.
 
 ## Source of truth and dependencies
 
@@ -39,9 +39,9 @@ The private preview is packaged from the same production output. No QA iframe wr
 
 ## Verification and release gates
 
-The newest focused checks are in `CAPTION-SCHEMATIC-VERIFICATION.md`; previous checks remain in `READINESS-VERIFICATION.md` and `review/readiness-*.json`. The current automated suite passes 116 tests, including all prior scientific regressions. The actual production build passes.
+The newest focused checks are in `CAPTION-SCHEMATIC-VERIFICATION.md`; previous checks remain in `READINESS-VERIFICATION.md` and `review/readiness-*.json`. The current automated suite passes 124 tests, including all prior scientific regressions. The actual production build passes.
 
-Do not mark authenticated staging QA as passed merely because deployment succeeds. The hosted private URL has previously required ChatGPT owner sign-in in the cloud browser. Exact-source local browser QA and the hosted deployment receipt are separate evidence. Public release still requires owner review of the refreshed staging version and any unresolved checks listed in the verification record.
+Do not mark authenticated staging QA as passed merely because deployment succeeds. The hosted private URL has previously required ChatGPT owner sign-in in the cloud browser. Exact-source local browser QA and the hosted deployment receipt are separate evidence. The owner has authorized release. Hosted private browser inspection remains sign-in blocked; exact-source local rendering, packaging parity, CI and the public post-deployment checks are recorded separately.
 
 Physical-device/mobile-keyboard, screen-reader and actual OS-level preference switching remain outside the available browser emulation. Source/runtime theme tests cover simulated OS changes. External NCBI ORFfinder comparison remains pending; no external validation claim is made. Native print output and the completed FASTA download transfer also need a final ordinary-browser check.
 

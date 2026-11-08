@@ -4,7 +4,7 @@ import {dirname,extname,isAbsolute,join,relative,resolve,sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
 const projectRoot=resolve(dirname(fileURLToPath(import.meta.url)),'..');
-const entries=['index.html','styles.css','experience.css','visual.css','seqscope.css','src','assets'];
+const entries=['index.html','styles.css','experience.css','visual.css','seqscope.css','site.webmanifest','src','assets'];
 function filesBelow(root){
  return readdirSync(root,{withFileTypes:true}).flatMap(entry=>entry.isDirectory()?filesBelow(join(root,entry.name)):entry.isFile()?[join(root,entry.name)]:[]);
 }
