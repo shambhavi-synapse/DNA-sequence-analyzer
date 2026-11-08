@@ -1,0 +1,282 @@
+[
+  {
+    "width": "1200",
+    "theme": "light",
+    "page": "Analyze",
+    "pageWidth": 1185,
+    "viewport": 1185
+  },
+  {
+    "width": "1200",
+    "theme": "light",
+    "page": "Compare",
+    "pageWidth": 1185,
+    "viewport": 1185
+  },
+  {
+    "width": "1200",
+    "theme": "light",
+    "page": "Explore",
+    "pageWidth": 1185,
+    "viewport": 1185
+  },
+  {
+    "width": "1200",
+    "theme": "light",
+    "page": "Molecular Notes",
+    "pageWidth": 1185,
+    "viewport": 1185
+  },
+  {
+    "width": "1200",
+    "theme": "light",
+    "page": "About",
+    "pageWidth": 1185,
+    "viewport": 1185
+  },
+  {
+    "width": "1200",
+    "theme": "dark",
+    "page": "Analyze",
+    "pageWidth": 1185,
+    "viewport": 1185
+  },
+  {
+    "width": "1200",
+    "theme": "dark",
+    "page": "Compare",
+    "pageWidth": 1185,
+    "viewport": 1185
+  },
+  {
+    "width": "1200",
+    "theme": "dark",
+    "page": "Explore",
+    "pageWidth": 1185,
+    "viewport": 1185
+  },
+  {
+    "width": "1200",
+    "theme": "dark",
+    "page": "Molecular Notes",
+    "pageWidth": 1185,
+    "viewport": 1185
+  },
+  {
+    "width": "1200",
+    "theme": "dark",
+    "page": "About",
+    "pageWidth": 1185,
+    "viewport": 1185
+  },
+  {
+    "width": "768",
+    "theme": "light",
+    "page": "Analyze",
+    "pageWidth": 753,
+    "viewport": 753
+  },
+  {
+    "width": "768",
+    "theme": "light",
+    "page": "Compare",
+    "pageWidth": 753,
+    "viewport": 753
+  },
+  {
+    "width": "768",
+    "theme": "light",
+    "page": "Explore",
+    "pageWidth": 753,
+    "viewport": 753
+  },
+  {
+    "width": "768",
+    "theme": "light",
+    "page": "Molecular Notes",
+    "pageWidth": 753,
+    "viewport": 753
+  },
+  {
+    "width": "768",
+    "theme": "light",
+    "page": "About",
+    "pageWidth": 753,
+    "viewport": 753
+  },
+  {
+    "width": "768",
+    "theme": "dark",
+    "page": "Analyze",
+    "pageWidth": 753,
+    "viewport": 753
+  },
+  {
+    "width": "768",
+    "theme": "dark",
+    "page": "Compare",
+    "pageWidth": 753,
+    "viewport": 753
+  },
+  {
+    "width": "768",
+    "theme": "dark",
+    "page": "Explore",
+    "pageWidth": 753,
+    "viewport": 753
+  },
+  {
+    "width": "768",
+    "theme": "dark",
+    "page": "Molecular Notes",
+    "pageWidth": 753,
+    "viewport": 753
+  },
+  {
+    "width": "768",
+    "theme": "dark",
+    "page": "About",
+    "pageWidth": 753,
+    "viewport": 753
+  },
+  {
+    "width": "390",
+    "theme": "light",
+    "page": "Analyze",
+    "pageWidth": 375,
+    "viewport": 375
+  },
+  {
+    "width": "390",
+    "theme": "light",
+    "page": "Compare",
+    "pageWidth": 375,
+    "viewport": 375
+  },
+  {
+    "width": "390",
+    "theme": "light",
+    "page": "Explore",
+    "pageWidth": 375,
+    "viewport": 375
+  },
+  {
+    "width": "390",
+    "theme": "light",
+    "page": "Molecular Notes",
+    "pageWidth": 375,
+    "viewport": 375
+  },
+  {
+    "width": "390",
+    "theme": "light",
+    "page": "About",
+    "pageWidth": 375,
+    "viewport": 375
+  },
+  {
+    "width": "390",
+    "theme": "dark",
+    "page": "Analyze",
+    "pageWidth": 375,
+    "viewport": 375
+  },
+  {
+    "width": "390",
+    "theme": "dark",
+    "page": "Compare",
+    "pageWidth": 375,
+    "viewport": 375
+  },
+  {
+    "width": "390",
+    "theme": "dark",
+    "page": "Explore",
+    "pageWidth": 375,
+    "viewport": 375
+  },
+  {
+    "width": "390",
+    "theme": "dark",
+    "page": "Molecular Notes",
+    "pageWidth": 375,
+    "viewport": 375
+  },
+  {
+    "width": "390",
+    "theme": "dark",
+    "page": "About",
+    "pageWidth": 375,
+    "viewport": 375
+  },
+  {
+    "width": "320",
+    "theme": "light",
+    "page": "Analyze",
+    "pageWidth": 305,
+    "viewport": 305
+  },
+  {
+    "width": "320",
+    "theme": "light",
+    "page": "Compare",
+    "pageWidth": 305,
+    "viewport": 305
+  },
+  {
+    "width": "320",
+    "theme": "light",
+    "page": "Explore",
+    "pageWidth": 305,
+    "viewport": 305
+  },
+  {
+    "width": "320",
+    "theme": "light",
+    "page": "Molecular Notes",
+    "pageWidth": 305,
+    "viewport": 305
+  },
+  {
+    "width": "320",
+    "theme": "light",
+    "page": "About",
+    "pageWidth": 305,
+    "viewport": 305
+  },
+  {
+    "width": "320",
+    "theme": "dark",
+    "page": "Analyze",
+    "pageWidth": 305,
+    "viewport": 305
+  },
+  {
+    "width": "320",
+    "theme": "dark",
+    "page": "Compare",
+    "pageWidth": 305,
+    "viewport": 305
+  },
+  {
+    "width": "320",
+    "theme": "dark",
+    "page": "Explore",
+    "pageWidth": 305,
+    "viewport": 305
+  },
+  {
+    "width": "320",
+    "theme": "dark",
+    "page": "Molecular Notes",
+    "pageWidth": 305,
+    "viewport": 305
+  },
+  {
+    "width": "320",
+    "theme": "dark",
+    "page": "About",
+    "pageWidth": 305,
+    "viewport": 305
+  }
+]

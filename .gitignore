@@ -2,3 +2,5 @@
 /dist/
 /preview/
 /.openai/
+.qa/
+qa-input/
