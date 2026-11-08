@@ -29,3 +29,13 @@ Open a review PR from the refinement branch, retain its tested revision, merge n
 ## Verification limits
 
 PDF evidence uses WeasyPrint 70 with the actual prepared application report DOM and production CSS. Native mobile Chrome print dialogs and physical printers are not controlled by this environment. Source links that show bot checks, restricted gateways or timeouts are explicitly recorded in `REFERENCE-LINK-AUDIT.md`; they are not represented as dead or fully verified pages. The release does not assert clinical validity or experimental gene discovery.
+
+## Recovery and production URL check
+
+On 8 November 2026, the recovered workspace was clean. Its runtime tree matched production main `9249c14fc2f808bfcec76d34a9de56895bf17c7b`, merged through PR #11. No implementation was lost or recreated. A fresh run of all 130 tests passed and the 70-file production build succeeded.
+
+The production URL is **https://shambhavi-synapse.github.io/DNA-sequence-analyzer/**. The repository path is case-sensitive: the lowercase `/dna-sequence-analyzer/` URL returned a GitHub Pages 404 during this check. No repository rename, DNS change, hosting migration or parallel website is required.
+
+Direct live-site checks confirmed the new Analyze caption, the removed About eyebrow, the five mechanism-specific genomic schematic asset paths, the HBB 117-nt result and its Download analysis CSV action. The actual downloaded file contains 162 data rows, six translations and 88 GC windows. Clicking Print Report prepares the complete current analysis report with the approved vector logo, title, composition, transformations, six frames, codon tables and pattern results. Native browser print-dialog pagination remains outside the available browser controls; the earlier three-page print-CSS PDF inspection remains documented above.
+
+This documentation-only recovery checkpoint intentionally triggers a fresh run of the existing main-branch Pages workflow. Application source and approved Essential Concepts schematics are unchanged from the verified refinement release. Final deployment status must be checked against the resulting commit and public release manifest, rather than inferred from this commit alone.
