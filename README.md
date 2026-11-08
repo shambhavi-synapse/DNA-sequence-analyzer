@@ -5,7 +5,7 @@
 A static, client-side bioinformatics workspace for sequence composition, strand transformations, six-frame translation, candidate ORFs, motifs, codon usage, and pairwise comparison. DNA stays in the browser. The deployed site has no backend, analytics, AI service, paid API, or account requirement.
 
 **Live site:** https://shambhavi-synapse.github.io/DNA-sequence-analyzer/  
-**Repository:** https://github.com/shambhavi-synapse/dna-sequence-analyzer
+**Repository:** https://github.com/shambhavi-synapse/DNA-sequence-analyzer
 
 ## What it does
 
@@ -58,16 +58,16 @@ Validation status is recorded in [Validation notes](docs/VALIDATION.md). Automat
 
 ## Deployment
 
-The repository uses GitHub Actions and GitHub Pages. No paid service or runtime is required. The review branch includes a dependency-free production build:
+The repository uses GitHub Actions and GitHub Pages. No paid service or runtime is required. A dependency-free production build is available:
 
 ```sh
 node --test
 node scripts/build-static.mjs
 ```
 
-The build writes `dist/`, validates local asset and module references, and creates a SHA-256 `release-manifest.json`. Serve `dist/` to inspect the production-equivalent output. The proposed Pages workflow runs tests, builds and uploads only `dist/`; it is inactive until approved changes reach `main`. The existing owner-private staging Site is separate from GitHub Pages.
+The build writes `dist/`, validates local asset and module references, and creates a SHA-256 `release-manifest.json`. Serve `dist/` to inspect the production-equivalent output. The Pages workflow runs automated checks and publishes the static application from the production branch. The owner-private staging site is separate from GitHub Pages.
 
-See [release readiness and rollback](docs/RELEASE-READINESS.md) for PR dependencies, approval gates, preview parity, release steps and remaining verification limits. Do not merge or change production until the owner approves.
+See [release readiness and rollback](docs/RELEASE-READINESS.md) for release history, verification evidence, rollback guidance, and remaining limitations. Future production changes should be reviewed and approved by the owner.
 
 ## References
 
@@ -83,7 +83,7 @@ See [release readiness and rollback](docs/RELEASE-READINESS.md) for PR dependenc
 
 ## Project and attribution
 
-Created by **Shambhavi**. The idea was to bring sequence analysis, scientific visualizations, and clear biological explanations together in one place. AI tools assisted development and review; the deployed scientific calculations execute locally without AI services.
+Created by **Shambhavi Tiwari**, a biology student in India. SeqScope brings DNA sequence analysis, scientific visualizations, and clear biological explanations together in a browser-based learning workspace. AI tools assisted development and review; the deployed scientific calculations execute locally without AI services.
 
 ## SeqScope visual identity and verification
 
