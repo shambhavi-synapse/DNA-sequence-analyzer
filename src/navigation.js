@@ -5,13 +5,14 @@ export function routeFromHash(hash) {
   if (ROUTES.has(value)) return value;
   if (value === 'analysis' || value === 'results') return 'analyze';
   if (['molecular-explorers','base-pairing','codon-builder','mutation-lab'].includes(value)) return 'explore';
-  if (['molecular-notes', 'curious-dna', 'genetics-life', 'example-sources', 'note-replication', 'note-transcription', 'note-translation'].includes(value)) return 'notes';
+  if (value.startsWith('note-') || ['molecular-notes', 'curious-dna', 'genetics-life', 'example-sources', 'notes-reading', 'notes-overview'].includes(value)) return 'notes';
   if (value === 'method') return 'about';
   return 'analyze';
 }
 
-export function initializeNavigation() {
+export function initializeNavigation({beforeDisplay = () => {}} = {}) {
   const display = (route = routeFromHash(location.hash)) => {
+    beforeDisplay(location.hash);
     document.querySelectorAll('.app-view').forEach(view => {
       view.hidden = view.dataset.view !== route;
     });
@@ -20,7 +21,10 @@ export function initializeNavigation() {
       else link.removeAttribute('aria-current');
     });
     const target=document.getElementById(location.hash.slice(1));
-    if(target && !ROUTES.has(location.hash.slice(1))) target.scrollIntoView({behavior:'auto'});
+    if(target && !ROUTES.has(location.hash.slice(1))) {
+      target.scrollIntoView({behavior:'auto'});
+      if(target.id.startsWith('note-')) {target.tabIndex=-1;target.focus({preventScroll:true});}
+    }
     else window.scrollTo({top:0,behavior:'auto'});
   };
   const navigate = route => {

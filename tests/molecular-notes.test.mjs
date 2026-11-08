@@ -57,7 +57,8 @@ test('Every standard concept keeps its prose and citations in one reading grid i
 
 test('Essential Concepts are text-led and retain only small explanatory sequence diagrams',()=>{
  const concepts=notes.slice(notes.indexOf('class="note-grid"'),notes.indexOf('class="foundations"'));
- assert.ok(!/<(?:img|figure)\b/.test(concepts));
+ assert.ok(!/<img\b/.test(concepts));
+ assert.equal([...concepts.matchAll(/<figure class="teaching-figure" data-schematic=/g)].length,4);
  assert.ok(!concepts.includes('atlas-process'));
  assert.ok(concepts.includes('href="#base-pairing"'));
  assert.ok(concepts.includes('href="#codon-builder"'));
@@ -77,4 +78,11 @@ test('theme bootstrap precedes styles and is loaded once before application modu
  assert.equal([...html.matchAll(/src="src\/theme.js/g)].length,1);
  const app=readFileSync(new URL('../src/app.js',import.meta.url),'utf8');
  assert.ok(!app.includes('initializeTheme'));
+});
+test('the nucleosome hero has exactly one replacement caption and no old visible caption',()=>{
+ const hero=notes.slice(notes.indexOf('class="gallery-intro"'),notes.indexOf('class="notes-view-control"'));
+ assert.equal([...hero.matchAll(/<figcaption>/g)].length,1);
+ assert.ok(hero.includes('<figcaption>Molecular illustration · Not to scale</figcaption>'));
+ assert.ok(!/DNA packaging|AI.generated/.test(hero));
+ assert.ok(hero.includes('alt="Conceptual illustration of DNA wrapping around nucleosome-like histone assemblies"'));
 });

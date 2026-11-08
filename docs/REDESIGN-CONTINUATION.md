@@ -1,3 +1,13 @@
+# Latest checkpoint: caption and schematic correction, 8 November 2026
+
+Continue on `review/seqscope-atlas`, draft PR #10, stacked on draft PR #9. The final synchronized GitHub revision and private preview receipt are recorded in PR #10. No merge or production release is authorized.
+
+Recovered the previously uncommitted Reading/Overview and SVG work from the workspace. The deployed preview was still version 6, built from the previous committed application. Finished the caption and diagrams, added the interactive base-pair rendering and explicit strand example, corrected tablet caption clipping, and performed Chrome responsive QA. See `CAPTION-SCHEMATIC-VERIFICATION.md` for exact coverage and limits. The core scientific engines are unchanged from PR #9. The suite now has 116 passing tests.
+
+Next required review: inspect the refreshed owner-private preview after owner sign-in. Cloud-browser hosted QA is blocked by the site's sign-in gate; do not claim that gate shows the application. Do not bypass private access or repeat the previously declined sign-in handoff. External NCBI ORFfinder comparison and native FASTA/print transfer checks remain pending. Preserve the one-approved-integration-release plan in `RELEASE-READINESS.md`.
+
+---
+
 # Redesign continuation checkpoint
 
 Implemented: original hero and local Space Grotesk from prior branch commit; interactive alignment column inspection, literal match/mismatch/gap states, difference emphasis and CSV export; amino acid names on selected six-frame codons. Fixed alignment coverage, incomplete triplet count and genetic-code-specific report stops.

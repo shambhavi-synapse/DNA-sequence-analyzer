@@ -39,7 +39,7 @@ The private preview is packaged from the same production output. No QA iframe wr
 
 ## Verification and release gates
 
-Executed checks are in `READINESS-VERIFICATION.md` and `review/readiness-*.json`. The current automated suite passes 96 tests, including all prior scientific regressions. The actual production build passes.
+The newest focused checks are in `CAPTION-SCHEMATIC-VERIFICATION.md`; previous checks remain in `READINESS-VERIFICATION.md` and `review/readiness-*.json`. The current automated suite passes 116 tests, including all prior scientific regressions. The actual production build passes.
 
 Do not mark authenticated staging QA as passed merely because deployment succeeds. The hosted private URL has previously required ChatGPT owner sign-in in the cloud browser. Exact-source local browser QA and the hosted deployment receipt are separate evidence. Public release still requires owner review of the refreshed staging version and any unresolved checks listed in the verification record.
 
