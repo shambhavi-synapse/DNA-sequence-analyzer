@@ -13,7 +13,8 @@ test('Molecular Notes research catalogue has linked, distinct sources and explic
     assert.ok(source.institution && source.kind && source.origin,id);
     assert.ok(!urls.has(source.url),`duplicate source ${id}`);urls.add(source.url);
     if(source.kind==='research paper'){
-      assert.equal(source.url,`https://doi.org/${source.doi}`);
+      assert.ok(/^10\.\d{4,9}\//.test(source.doi),id);
+      assert.ok(source.url===`https://doi.org/${source.doi}` || /^https:\/\/pmc\.ncbi\.nlm\.nih\.gov\/articles\/PMC\d+\/$/.test(source.url),id);
       assert.ok(source.authors.length && source.affiliation_evidence.length,id);
       assert.ok(Number(source.publication_year)<=2026,id);
     }

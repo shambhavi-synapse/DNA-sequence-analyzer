@@ -30,16 +30,8 @@
     "origin": "Indian institution or India-affiliated research collaboration",
     "verified_on": "2026-11-07"
   },
-  "genomeindia": {
-    "url": "https://inda.rcb.ac.in/genomeindia/loadindex",
-    "label": "GenomeIndia data resource · IBDC",
-    "kind": "database",
-    "institution": "GenomeIndia consortium / IBDC",
-    "origin": "Indian institution or India-affiliated research collaboration",
-    "verified_on": "2026-11-07"
-  },
   "41099703": {
-    "url": "https://doi.org/10.1093/nar/gkaf1019",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12526125/",
     "label": "RECQL5 and stalled replication forks · Nagraj et al., 2025",
     "kind": "research paper",
     "institution": "IISc",
@@ -63,7 +55,7 @@
     "verified_on": "2026-11-07"
   },
   "40200022": {
-    "url": "https://doi.org/10.1038/s41477-025-01974-2",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7617672/",
     "label": "Histone H4 variation and salt stress in rice · Gandhivel et al., 2025",
     "kind": "research paper",
     "institution": "NCBS–TIFR, SASTRA and international collaborators",
@@ -181,7 +173,7 @@
     "verified_on": "2026-11-07"
   },
   "33084858": {
-    "url": "https://doi.org/10.1093/dnares/dsaa024",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7711166/",
     "label": "BG4 antibody specificity for G-quadruplexes · Javadekar et al., 2020",
     "kind": "research paper",
     "institution": "IISc",
