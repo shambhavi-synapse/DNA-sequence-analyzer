@@ -12,7 +12,7 @@ Interpretive text describes composition and computational outputs. It does not i
 
 ## Strand transformations
 
-Complement uses the IUPAC complement map. Reverse complement reverses the complemented symbols. Coding-strand DNA-to-RNA directly replaces T with U. Template-strand transcription first complements the supplied strand, then replaces T with U. RNA outputs are displayed 5′ to 3′. RNA input and reverse transcription are not supported because the input alphabet is DNA.
+Complement uses the IUPAC complement map. Reverse complement reverses the complemented symbols. Coding-strand DNA-to-RNA directly replaces T with U. For a template-strand DNA sequence supplied 5′ to 3′, transcription reverse-complements it and replaces T with U, yielding an RNA sequence displayed 5′ to 3′. This operation does not infer transcription direction from genomic context. Both RNA outputs are displayed 5′ to 3′. RNA input and reverse transcription are not supported because the input alphabet is DNA.
 
 ## Translation and codon usage
 
@@ -41,6 +41,10 @@ The comparison uses global Needleman-Wunsch dynamic programming with scores: exa
 ## Example sequences and mutation explorer
 
 The synthetic teaching sequence is clearly labelled and is not presented as a biological reference. The HBB example is the first 117 coding nucleotides from Homo sapiens HBB mRNA RefSeq NM_000518.5. Its c.20A>T example illustrates the GAG-to-GTG codon change. Protein residue numbering in mature hemoglobin commonly omits the initiating methionine, which is why the coding variant is called p.Glu6Val in the hemoglobin literature while transcript translation includes the initial methionine.
+
+## Single-base substitution interpretation
+
+The HBB teaching explorer changes one unambiguous DNA base. A selected base identical to the reference is classified as `unchanged`, not as a synonymous substitution. For complete, unambiguous codons under the standard genetic code, synonymous and missense substitutions are distinguished from stop-gain (`nonsense`), stop-loss, and stop-retained changes. These are codon-level classifications and do not predict transcript processing or the biological impact of a variant.
 
 ## Short-oligonucleotide melting-temperature estimate
 

@@ -1,4 +1,6 @@
-# Helix Lab: DNA Sequence Analyzer
+# SeqScope: DNA Sequence Analyzer
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/branding/seqscope-logo-dark.svg"><img src="assets/branding/seqscope-logo-light.svg" width="220" alt="SeqScope"></picture>
 
 A static, client-side bioinformatics workspace for sequence composition, strand transformations, six-frame translation, candidate ORFs, motifs, codon usage, and pairwise comparison. DNA stays in the browser. The deployed site has no backend, analytics, AI service, paid API, or account requirement.
 
@@ -20,12 +22,11 @@ A static, client-side bioinformatics workspace for sequence composition, strand 
 
 ### Learning tools
 
-- Base-pairing explorer, standard-code RNA codon explorer, and a single-base HBB mutation example.
-- Twelve illustrated Molecular Notes, an interactive base-pairing explorer, a codon-change explorer, synthetic mutation examples, twelve researched Curious DNA facts, and sourced examples of lactase persistence, caffeine metabolism, coriander aroma perception, eye-colour genetics, and haemoglobin. These explain general biology and do not predict personal traits.
-- Example library contains synthetic reading-frame and telomere-repeat sequences and a 117 nt human HBB coding fragment from RefSeq NM_000518.5, plus a copy with the documented c.20A>T teaching substitution.
-- Synthetic short-oligo inputs from 4–14 unambiguous nucleotides show a Wallace-rule melting-temperature estimate with its limitations stated beside the interpretation.
-- Analyze, Compare, Molecular Notes, and About are distinct hash-addressable workspaces. Theme preference can follow the system, or be set to light or dark and remembered locally.
-- Molecular Notes includes twelve illustrated topics, a base-pairing explorer, codon-change feedback, and six clearly labelled synthetic mutation demonstrations. Curious DNA contains twelve sourced research notes.
+- Explore contains the base-pairing explorer, RNA codon builder, HBB substitution example and labelled synthetic mutation demonstrations.
+- Molecular Notes contains twelve text-led Essential Concepts, a compact collection on genomic structure, variation and regulation, and sourced genetics examples from everyday life. These explain general biology and do not predict personal traits.
+- The example library includes synthetic reading-frame and telomere-repeat sequences, a vertebrate mitochondrial-code demonstration, and a 117 nt HBB fragment from RefSeq NM_000518.5, plus its documented c.20A>T teaching substitution.
+- Short unambiguous oligonucleotides from 4–14 nt show a Wallace-rule melting-temperature estimate with its limitations stated beside the interpretation.
+- Analyze, Compare, Explore, Molecular Notes and About are hash-addressable workspaces. Theme follows the operating system on a first visit; explicit Light, Dark and System preferences persist locally.
 
 ## Scientific conventions
 
@@ -41,7 +42,7 @@ Serve the repository root with any static HTTP server, then open `index.html`. F
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000`. No dependency installation or build step is required. The site works offline after its files are loaded.
+Open `http://localhost:8000`. No dependency installation is required for development. All calculations run locally; the app uses locally bundled fonts and scientific assets.
 
 ## Tests and validation
 
@@ -57,7 +58,16 @@ Validation status is recorded in [Validation notes](docs/VALIDATION.md). Automat
 
 ## Deployment
 
-The repository uses GitHub Actions and GitHub Pages. No build service or paid runtime is used. Changes pushed to `main` trigger the site deployment workflow.
+The repository uses GitHub Actions and GitHub Pages. No paid service or runtime is required. The review branch includes a dependency-free production build:
+
+```sh
+node --test
+node scripts/build-static.mjs
+```
+
+The build writes `dist/`, validates local asset and module references, and creates a SHA-256 `release-manifest.json`. Serve `dist/` to inspect the production-equivalent output. The proposed Pages workflow runs tests, builds and uploads only `dist/`; it is inactive until approved changes reach `main`. The existing owner-private staging Site is separate from GitHub Pages.
+
+See [release readiness and rollback](docs/RELEASE-READINESS.md) for PR dependencies, approval gates, preview parity, release steps and remaining verification limits. Do not merge or change production until the owner approves.
 
 ## References
 
@@ -74,3 +84,15 @@ The repository uses GitHub Actions and GitHub Pages. No build service or paid ru
 ## Project and attribution
 
 Created by **Shambhavi**. The idea was to bring sequence analysis, scientific visualizations, and clear biological explanations together in one place. AI tools assisted development and review; the deployed scientific calculations execute locally without AI services.
+
+## SeqScope visual identity and verification
+
+SeqScope retains the existing browser-local scientific engine and repository URL. Its graphite, vermilion and ivory interface includes linked GC/ORF/sequence inspection, an inline six-frame codon inspector, responsive nucleotide rows and locally bundled artwork. See [the refinement verification record](docs/SEQSCOPE-VALIDATION.md) for executed checks, source provenance and limitations. Logo variants are in `assets/seqscope-*.svg`; design tokens and responsive refinements are in `seqscope.css`.
+
+## Official branding and printable reports
+
+The approved SeqScope mark is traced from the owner's reference artwork, including its original wordmark outlines. Stacked, horizontal, symbol-only, light, dark and print variants are in `assets/branding/`. The source reference and optional development tracing script are preserved; they are not build dependencies.
+
+Print Report and normal browser printing use the same dedicated A4 report. It includes the official logo as a real SVG image, complete sequence transformations, all six translations, complete candidate ORF tables, codon usage and current pattern results. Full strings are retained beyond screen display caps. A verified sample is in [the sample report PDF](docs/review/seqscope-sample-report.pdf). Browser printing remains entirely local.
+
+The public GitHub Pages repository path is case-sensitive: use **DNA-sequence-analyzer** in the live URL.

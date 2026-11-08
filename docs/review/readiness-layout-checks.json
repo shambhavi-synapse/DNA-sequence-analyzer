@@ -1,0 +1,217 @@
+{
+  "reading": [
+    {
+      "conceptWidth": 265,
+      "genomicWidth": 265,
+      "overflow": false,
+      "theme": "light",
+      "width": 305
+    },
+    {
+      "conceptWidth": 305,
+      "genomicWidth": 305,
+      "overflow": false,
+      "theme": "light",
+      "width": 345
+    },
+    {
+      "conceptWidth": 335,
+      "genomicWidth": 335,
+      "overflow": false,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "conceptWidth": 375,
+      "genomicWidth": 375,
+      "overflow": false,
+      "theme": "light",
+      "width": 415
+    },
+    {
+      "conceptWidth": 595,
+      "genomicWidth": 595,
+      "overflow": false,
+      "theme": "light",
+      "width": 635
+    },
+    {
+      "conceptWidth": 645,
+      "genomicWidth": 645,
+      "overflow": false,
+      "theme": "light",
+      "width": 685
+    },
+    {
+      "conceptWidth": 645,
+      "genomicWidth": 645,
+      "overflow": false,
+      "theme": "light",
+      "width": 753
+    },
+    {
+      "conceptWidth": 697,
+      "genomicWidth": 697,
+      "overflow": false,
+      "theme": "light",
+      "width": 805
+    },
+    {
+      "conceptWidth": 703,
+      "genomicWidth": 703,
+      "overflow": false,
+      "theme": "light",
+      "width": 1009
+    },
+    {
+      "conceptWidth": 703,
+      "genomicWidth": 703,
+      "overflow": false,
+      "theme": "light",
+      "width": 1185
+    },
+    {
+      "conceptWidth": 265,
+      "genomicWidth": 265,
+      "overflow": false,
+      "theme": "dark",
+      "width": 305
+    },
+    {
+      "conceptWidth": 305,
+      "genomicWidth": 305,
+      "overflow": false,
+      "theme": "dark",
+      "width": 345
+    },
+    {
+      "conceptWidth": 335,
+      "genomicWidth": 335,
+      "overflow": false,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "conceptWidth": 375,
+      "genomicWidth": 375,
+      "overflow": false,
+      "theme": "dark",
+      "width": 415
+    },
+    {
+      "conceptWidth": 595,
+      "genomicWidth": 595,
+      "overflow": false,
+      "theme": "dark",
+      "width": 635
+    },
+    {
+      "conceptWidth": 645,
+      "genomicWidth": 645,
+      "overflow": false,
+      "theme": "dark",
+      "width": 685
+    },
+    {
+      "conceptWidth": 645,
+      "genomicWidth": 645,
+      "overflow": false,
+      "theme": "dark",
+      "width": 753
+    },
+    {
+      "conceptWidth": 697,
+      "genomicWidth": 697,
+      "overflow": false,
+      "theme": "dark",
+      "width": 805
+    },
+    {
+      "conceptWidth": 703,
+      "genomicWidth": 703,
+      "overflow": false,
+      "theme": "dark",
+      "width": 1009
+    },
+    {
+      "conceptWidth": 703,
+      "genomicWidth": 703,
+      "overflow": false,
+      "theme": "dark",
+      "width": 1185
+    }
+  ],
+  "loadedResults": [
+    {
+      "baseFont": "16px",
+      "baseWidth": 24,
+      "codeWidth": 225,
+      "frames": 6,
+      "overflow": false,
+      "theme": "light",
+      "width": 305
+    },
+    {
+      "baseFont": "16px",
+      "baseWidth": 24,
+      "codeWidth": 295,
+      "frames": 6,
+      "overflow": false,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "baseFont": "16px",
+      "baseWidth": 24,
+      "codeWidth": 440,
+      "frames": 6,
+      "overflow": false,
+      "theme": "light",
+      "width": 753
+    },
+    {
+      "baseFont": "16px",
+      "baseWidth": 24,
+      "codeWidth": 440,
+      "frames": 6,
+      "overflow": false,
+      "theme": "light",
+      "width": 829
+    },
+    {
+      "baseWidth": 24,
+      "frames": 6,
+      "overflow": false,
+      "theme": "dark",
+      "width": 305
+    },
+    {
+      "baseWidth": 24,
+      "frames": 6,
+      "overflow": false,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "baseWidth": 24,
+      "frames": 6,
+      "overflow": false,
+      "theme": "dark",
+      "width": 753
+    },
+    {
+      "baseWidth": 24,
+      "frames": 6,
+      "overflow": false,
+      "theme": "dark",
+      "width": 829
+    }
+  ],
+  "runtime": {
+    "csvDownloaded": true,
+    "copyVerifiedByPaste": true,
+    "multiRecordFASTARead": true,
+    "FASTATransfer": "Download event timed out; completion unverified",
+    "appOriginErrorsObserved": []
+  }
+}

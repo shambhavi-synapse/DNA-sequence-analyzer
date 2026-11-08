@@ -1,0 +1,242 @@
+[
+  {
+    "route": "#analyze",
+    "scrollWidth": 1348,
+    "theme": "light",
+    "viewport": "desktop",
+    "visibleView": "view-analyze",
+    "width": 1348
+  },
+  {
+    "route": "#compare",
+    "scrollWidth": 1348,
+    "theme": "light",
+    "viewport": "desktop",
+    "visibleView": "view-compare",
+    "width": 1348
+  },
+  {
+    "route": "#explore",
+    "scrollWidth": 1348,
+    "theme": "light",
+    "viewport": "desktop",
+    "visibleView": "view-explore",
+    "width": 1348
+  },
+  {
+    "route": "#notes",
+    "scrollWidth": 1348,
+    "theme": "light",
+    "viewport": "desktop",
+    "visibleView": "view-notes",
+    "width": 1348
+  },
+  {
+    "route": "#about",
+    "scrollWidth": 1348,
+    "theme": "light",
+    "viewport": "desktop",
+    "visibleView": "view-about",
+    "width": 1348
+  },
+  {
+    "route": "#analyze",
+    "scrollWidth": 1348,
+    "theme": "dark",
+    "viewport": "desktop",
+    "visibleView": "view-analyze",
+    "width": 1348
+  },
+  {
+    "route": "#compare",
+    "scrollWidth": 1348,
+    "theme": "dark",
+    "viewport": "desktop",
+    "visibleView": "view-compare",
+    "width": 1348
+  },
+  {
+    "route": "#explore",
+    "scrollWidth": 1348,
+    "theme": "dark",
+    "viewport": "desktop",
+    "visibleView": "view-explore",
+    "width": 1348
+  },
+  {
+    "route": "#notes",
+    "scrollWidth": 1348,
+    "theme": "dark",
+    "viewport": "desktop",
+    "visibleView": "view-notes",
+    "width": 1348
+  },
+  {
+    "route": "#about",
+    "scrollWidth": 1348,
+    "theme": "dark",
+    "viewport": "desktop",
+    "visibleView": "view-about",
+    "width": 1348
+  },
+  {
+    "route": "#analyze",
+    "scrollWidth": 375,
+    "theme": "light",
+    "viewport": "390×844 responsive frame",
+    "visibleView": "view-analyze",
+    "width": 375
+  },
+  {
+    "route": "#compare",
+    "scrollWidth": 375,
+    "theme": "light",
+    "viewport": "390×844 responsive frame",
+    "visibleView": "view-compare",
+    "width": 375
+  },
+  {
+    "route": "#explore",
+    "scrollWidth": 375,
+    "theme": "light",
+    "viewport": "390×844 responsive frame",
+    "visibleView": "view-explore",
+    "width": 375
+  },
+  {
+    "route": "#notes",
+    "scrollWidth": 375,
+    "theme": "light",
+    "viewport": "390×844 responsive frame",
+    "visibleView": "view-notes",
+    "width": 375
+  },
+  {
+    "route": "#about",
+    "scrollWidth": 375,
+    "theme": "light",
+    "viewport": "390×844 responsive frame",
+    "visibleView": "view-about",
+    "width": 375
+  },
+  {
+    "route": "#analyze",
+    "scrollWidth": 375,
+    "theme": "dark",
+    "viewport": "390×844 responsive frame",
+    "visibleView": "view-analyze",
+    "width": 375
+  },
+  {
+    "route": "#compare",
+    "scrollWidth": 375,
+    "theme": "dark",
+    "viewport": "390×844 responsive frame",
+    "visibleView": "view-compare",
+    "width": 375
+  },
+  {
+    "route": "#explore",
+    "scrollWidth": 375,
+    "theme": "dark",
+    "viewport": "390×844 responsive frame",
+    "visibleView": "view-explore",
+    "width": 375
+  },
+  {
+    "route": "#notes",
+    "scrollWidth": 375,
+    "theme": "dark",
+    "viewport": "390×844 responsive frame",
+    "visibleView": "view-notes",
+    "width": 375
+  },
+  {
+    "route": "#about",
+    "scrollWidth": 375,
+    "theme": "dark",
+    "viewport": "390×844 responsive frame",
+    "visibleView": "view-about",
+    "width": 375
+  },
+  {
+    "route": "#analyze",
+    "scrollWidth": 753,
+    "theme": "light",
+    "viewport": "768×1024 responsive frame",
+    "visibleView": "view-analyze",
+    "width": 753
+  },
+  {
+    "route": "#compare",
+    "scrollWidth": 768,
+    "theme": "light",
+    "viewport": "768×1024 responsive frame",
+    "visibleView": "view-compare",
+    "width": 768
+  },
+  {
+    "route": "#explore",
+    "scrollWidth": 753,
+    "theme": "light",
+    "viewport": "768×1024 responsive frame",
+    "visibleView": "view-explore",
+    "width": 753
+  },
+  {
+    "route": "#notes",
+    "scrollWidth": 753,
+    "theme": "light",
+    "viewport": "768×1024 responsive frame",
+    "visibleView": "view-notes",
+    "width": 753
+  },
+  {
+    "route": "#about",
+    "scrollWidth": 753,
+    "theme": "light",
+    "viewport": "768×1024 responsive frame",
+    "visibleView": "view-about",
+    "width": 753
+  },
+  {
+    "route": "#analyze",
+    "scrollWidth": 753,
+    "theme": "dark",
+    "viewport": "768×1024 responsive frame",
+    "visibleView": "view-analyze",
+    "width": 753
+  },
+  {
+    "route": "#compare",
+    "scrollWidth": 768,
+    "theme": "dark",
+    "viewport": "768×1024 responsive frame",
+    "visibleView": "view-compare",
+    "width": 768
+  },
+  {
+    "route": "#explore",
+    "scrollWidth": 753,
+    "theme": "dark",
+    "viewport": "768×1024 responsive frame",
+    "visibleView": "view-explore",
+    "width": 753
+  },
+  {
+    "route": "#notes",
+    "scrollWidth": 753,
+    "theme": "dark",
+    "viewport": "768×1024 responsive frame",
+    "visibleView": "view-notes",
+    "width": 753
+  },
+  {
+    "route": "#about",
+    "scrollWidth": 753,
+    "theme": "dark",
+    "viewport": "768×1024 responsive frame",
+    "visibleView": "view-about",
+    "width": 753
+  }
+]

@@ -1,0 +1,247 @@
+{
+  "viewports": [
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 265,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "light",
+      "width": 305
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 305,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "light",
+      "width": 345
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 335,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 595,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "light",
+      "width": 635
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 645,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "light",
+      "width": 685
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 388,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "light",
+      "width": 753
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 420,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "light",
+      "width": 805
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 547,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "light",
+      "width": 1009
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 645,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "light",
+      "width": 1185
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 265,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "dark",
+      "width": 305
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 305,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "dark",
+      "width": 345
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 335,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 595,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "dark",
+      "width": 635
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 645,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "dark",
+      "width": 685
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 388,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "dark",
+      "width": 753
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 420,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "dark",
+      "width": 805
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 547,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "dark",
+      "width": 1009
+    },
+    {
+      "concepts": 12,
+      "countryBlocks": 0,
+      "largeConceptImages": 0,
+      "minBody": 645,
+      "overflow": false,
+      "readingGroups": 30,
+      "theme": "dark",
+      "width": 1185
+    }
+  ],
+  "contrast": [
+    {
+      "theme": "Light",
+      "route": "Analyze",
+      "count": 0,
+      "failures": []
+    },
+    {
+      "theme": "Light",
+      "route": "Compare",
+      "count": 0,
+      "failures": []
+    },
+    {
+      "theme": "Light",
+      "route": "Explore",
+      "count": 0,
+      "failures": []
+    },
+    {
+      "theme": "Light",
+      "route": "Molecular Notes",
+      "count": 0,
+      "failures": []
+    },
+    {
+      "theme": "Light",
+      "route": "About",
+      "count": 0,
+      "failures": []
+    },
+    {
+      "theme": "Dark",
+      "route": "Analyze",
+      "count": 0,
+      "failures": [],
+      "note": "Rechecked after the theme transition settled; no failures."
+    },
+    {
+      "theme": "Dark",
+      "route": "Compare",
+      "count": 0,
+      "failures": []
+    },
+    {
+      "theme": "Dark",
+      "route": "Explore",
+      "count": 0,
+      "failures": []
+    },
+    {
+      "theme": "Dark",
+      "route": "Molecular Notes",
+      "count": 0,
+      "failures": []
+    },
+    {
+      "theme": "Dark",
+      "route": "About",
+      "count": 0,
+      "failures": []
+    }
+  ]
+}

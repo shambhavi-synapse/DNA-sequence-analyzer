@@ -1,0 +1,10 @@
+{
+  "accession": "NM_000518.5",
+  "source": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NM_000518.5&rettype=gb&retmode=text",
+  "retrieved": "2026-11-07",
+  "transcriptStart": 51,
+  "transcriptEnd": 167,
+  "cdsStart": 51,
+  "sequence": "ATGGTGCATCTGACTCCTGAGGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGCTGCTGGTGGTCTACCCTTGGACC",
+  "translation": "MVHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWT"
+}
