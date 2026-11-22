@@ -14,25 +14,29 @@ A static, client-side bioinformatics workspace for sequence composition, strand 
 - Parse pasted DNA or single and multi-record FASTA. Accept uppercase/lowercase and standard DNA IUPAC codes; report invalid symbols with positions.
 - Calculate sequence length, A/C/G/T counts, known-base percentages, GC and AT content, and ambiguous-symbol totals. The percentages use unambiguous A/C/G/T as the denominator; ambiguity remains part of the sequence and total length.
 - Generate IUPAC complements, reverse complements, coding-strand T-to-U RNA, and RNA transcribed from the template strand.
-- Translate all six frames with NCBI standard table 1 or vertebrate mitochondrial table 2. Ambiguous codons resolve only when all possible codons encode the same amino acid; otherwise display X.
-- Find candidate ATG-to-stop ORFs on both strands, using configurable minimum length, selected table stop codons, and 1-based inclusive input coordinates.
+- Translate all six frames with NCBI standard table 1, vertebrate mitochondrial table 2, invertebrate mitochondrial table 5, or bacterial/archaeal/plant-plastid table 11. Ambiguous codons resolve only when all possible codons encode the same amino acid; otherwise display X.
+- Find start-to-stop candidate ORFs on both strands with conservative ATG-only or explicitly selected table-defined initiation, definite ambiguous stops, unresolved-codon flags, and 1-based inclusive input coordinates. Alternative initiators become Met only at the candidate start.
+- Calculate oriented-strand GC/AT skew, all 16 dinucleotide counts/frequencies, CpG count, and CpG observed/expected ratio with explicit denominators.
 - Plot sliding-window GC content and show codon counts, strand-aware positions, motifs, repeats, and reverse-complement palindromes.
 - Align two sequences globally with Needleman-Wunsch using explicit match/mismatch/gap scores and a 1,500 nt per-sequence limit.
-- Export FASTA, CSV, copied summaries, and printable result reports.
+- Inspect grouped alignment differences relative to sequence A, including indel anchors and ambiguous-symbol differences.
+- Export FASTA, complete analysis/alignment CSVs, deterministic findings, and printable reports with analysis version, full input and settings.
 
 ### Learning tools
 
 - Explore contains the base-pairing explorer, RNA codon builder, HBB substitution example and labelled synthetic mutation demonstrations.
 - Molecular Notes contains twelve text-led Essential Concepts, a compact collection on genomic structure, variation and regulation, and sourced genetics examples from everyday life. These explain general biology and do not predict personal traits.
 - The example library includes synthetic reading-frame and telomere-repeat sequences, a vertebrate mitochondrial-code demonstration, and a 117 nt HBB fragment from RefSeq NM_000518.5, plus its documented c.20A>T teaching substitution.
-- Short unambiguous oligonucleotides from 4–14 nt show a Wallace-rule melting-temperature estimate with its limitations stated beside the interpretation.
+- Sequence context settings distinguish unknown fragments, genomic DNA and coding sequences; concise notes explain introns, initiation chemistry and code-specific limitations. No organism or gene is inferred from input.
 - Analyze, Compare, Explore, Molecular Notes and About are hash-addressable workspaces. Theme follows the operating system on a first visit; explicit Light, Dark and System preferences persist locally.
 
 ## Scientific conventions
 
 See [Scientific specification](docs/SCIENTIFIC_SPECIFICATION.md) for algorithms, parameters, denominators, alignment scoring, motif semantics, coordinate conversion, and limitations.
 
-ORFs are computational candidates, not experimentally verified genes. The finder uses ATG starts and table-specific stop codons; it does not model alternative initiation codons, splicing, or gene context. Six-frame translations do not establish that a protein is expressed. Global alignment uses literal IUPAC symbol equality, not probabilistic base compatibility. Exact motif searches compare symbols literally; palindrome and tandem-repeat searches operate only on unambiguous A/C/G/T. The Wallace estimate is a rough rule for short oligonucleotides only and is not a measured melting temperature. No molecular-mass estimate is shown.
+ORFs are computational candidates, not experimentally verified genes. ATG-only initiation remains the default. Optional table-defined starts represent possibilities across taxa, not evidence that a particular organism initiates at that position. Unresolved internal X codons can conceal an earlier stop. No splicing, RNA editing, expression or functional prediction is performed. Bacterial fMet is explained as an initiation modification; internal AUG remains Met, and archaea are distinguished from bacteria.
+
+Global alignment uses literal IUPAC equality; ambiguity differences are not established substitutions. Motifs retain exact-symbol matching by default, with optional definite IUPAC matching. Palindromes and tandem repeats operate on unambiguous A/C/G/T. CpG statistics do not identify methylation or CpG islands. Melting temperature is deferred until a validated model with explicit salt and strand concentration is available; the previous unconditioned Wallace value is no longer emitted. No molecular-mass estimate is shown.
 
 ## Run locally
 

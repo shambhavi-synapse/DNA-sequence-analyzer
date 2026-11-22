@@ -304,3 +304,22 @@ footer .brand-light{display:none!important}footer .brand-dark{display:block!impo
 }
 @page{@bottom-right{content:counter(page);font:8.5pt Manrope,Arial,sans-serif;color:#494743}}
 @media print{#print-report .report-sequence h3{break-after:avoid}#print-report .report-gc{break-inside:avoid}#print-report .report-end{margin-top:3mm;padding-top:2mm}}
+
+/* Targeted analysis controls retain the existing theme and type system. */
+.sequence-context { margin-block: 1rem; }
+.sequence-context summary { cursor: pointer; }
+.context-controls { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-block: 1rem; }
+.context-controls label { display: grid; gap: .5rem; font-size: .85rem; }
+.context-controls select, #genetic-code { max-width: 100%; min-width: 0; }
+.analysis-links { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; margin-block: 1rem; font-size: .85rem; }
+.analysis-links a { color: var(--text); }
+#composition-statistics dl { display: grid; grid-template-columns: 1fr auto; gap: .3rem 1rem; font-size: .85rem; }
+#composition-statistics dd { margin: 0; font-family: var(--mono); }
+#composition-statistics summary { cursor: pointer; }
+#composition-statistics table { width: 100%; font-size: .8rem; }
+#findings-text p { margin-block: .7rem; overflow-wrap: anywhere; font-size: .9rem; }
+#coding-context p { margin-block: .6rem; }
+.alignment-differences { max-height: 18rem; overflow: auto; margin-block: 1rem; }
+.alignment-differences button { display: block; width: 100%; text-align: left; overflow-wrap: anywhere; margin-block: .35rem; }
+#composition-distribution, #sequence-features, #coding-analysis, #integrated-findings, #sequence-overview { scroll-margin-top: 6rem; }
+@media (max-width: 700px) { .context-controls { grid-template-columns: 1fr; } }

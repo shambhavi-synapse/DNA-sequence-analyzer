@@ -16,13 +16,30 @@ Complement uses the IUPAC complement map. Reverse complement reverses the comple
 
 ## Translation and codon usage
 
-Translation uses NCBI translation table 1 by default, with table 2 (vertebrate mitochondrial code) available by explicit selection. Table 2 reassigns ATA to methionine, TGA to tryptophan, and AGA/AGG to stop. Frames +1/+2/+3 read the supplied sequence from offsets 0/1/2. Frames −1/−2/−3 read the reverse complement from offsets 0/1/2. Incomplete terminal codons are omitted. An ambiguous codon is expanded across all possible concrete codons; a residue is displayed only when all expansions yield the same amino acid or stop, otherwise `X` is displayed.
+Translation uses NCBI table 1 by default. Explicit options are table 2 (vertebrate mitochondrial), table 5 (invertebrate mitochondrial), and table 11 (bacterial, archaeal and plant plastid). Table 2 reassigns ATA to Met, TGA to Trp, and AGA/AGG to stop; table 5 instead assigns AGA/AGG to Ser. Table 11 retains table 1 internal assignments but has additional permitted initiators. Genetic code is never guessed from a source label. Frames +1/+2/+3 read the supplied sequence from offsets 0/1/2. Frames −1/−2/−3 read the reverse complement from offsets 0/1/2. Incomplete terminal codons are omitted. An ambiguous codon is expanded across all possible concrete codons; a residue is displayed only when all expansions yield the same amino acid or stop, otherwise `X` is displayed.
 
 Codon usage counts complete, unambiguous triplets in the selected frame. Its frequency denominator is the number of such codons; ambiguous triplets are reported separately and excluded. Counts include stop codons.
 
 ## Candidate ORFs and coordinates
 
-Candidate ORFs start at `ATG` and end at the first in-frame stop for the selected code: `TAA`, `TAG`, `TGA` for table 1; `TAA`, `TAG`, `AGA`, `AGG` for table 2. The current finder intentionally uses ATG-only initiation in both tables; alternate mitochondrial initiation codons are not modeled. Every start that reaches that stop can yield a candidate, including nested candidates. Start and stop codons are included in the ORF length. The minimum is measured in nucleotides, including the stop. Analysis checks all six frames. Ambiguous codons cannot serve as a start or stop. Reverse-strand coordinates are mapped back to the original input. Coordinates are 1-based and inclusive. Candidate ORFs do not establish a gene or expressed protein.
+ATG-only initiation remains the conservative default. Optional table-defined initiation uses the NCBI Starts rows:
+
+| Table | Allowed starts when explicitly enabled |
+| --- | --- |
+| 1 | TTG, CTG, ATG |
+| 2 | ATT, ATC, ATA, ATG, GTG |
+| 5 | TTG, ATT, ATC, ATA, ATG, GTG |
+| 11 | TTG, CTG, ATT, ATC, ATA, ATG, GTG |
+
+These are possible starts across taxa and do not prove initiation at a site. Exact canonical start symbols are required. A candidate ends at the first definite in-frame stop for the selected table. This includes ambiguous triplets whose every expansion is a stop (e.g. TAR in table 1). Mixed stop/sense triplets remain X; candidates crossing X are explicitly flagged because an earlier stop may be concealed. Ambiguity-compatible candidates are not asserted to be definitely open reading frames.
+
+All starts reaching a stop may yield candidates, including nested candidates. Both boundary codons are included in length. Alternative initiators are represented by M only as the first residue of an ORF peptide; raw frame translation and codon usage retain ordinary internal assignments (e.g. GTG remains V). An unresolved-internal-codon count accompanies each ORF.
+
+All six frames are searched. Reverse intervals are mapped to the original input; coordinates are 1-based inclusive and ordered low to high, with a separate strand/frame. Candidate ORFs do not establish a gene or expressed protein. The search does not splice genomic DNA, edit RNA, complete mitochondrial terminal stops by polyadenylation, or model frameshift-dependent termination. NCBI table 2 AGA/AGG assignments remain rule-based; real vertebrate mitochondrial processing may differ.
+
+Source (unspecified, prokaryotic, eukaryotic, organellar) and sequence type (unknown fragment, genomic, coding) are user-supplied context for interpretation, not classifications. They do not change nucleotide arithmetic or silently choose a code. Bacterial initiation commonly uses fMet; archaeal and eukaryotic cytoplasmic initiation normally uses Met. Organellar chemistry and codes vary. M notation does not infer formylation, and no internal methionines are relabeled.
+
+Selecting an ORF or translation tile synchronizes the codon-usage frame. Codon usage covers the **whole selected frame**, including stops, and does not imply that all counted codons belong to the selected ORF. Nucleotide inspection follows this same frame and returns original-input triplet coordinates, including reverse frames and incomplete terminal/leading positions.
 
 ## Sliding-window GC
 
@@ -32,11 +49,15 @@ The window advances by one nucleotide. Each complete window reports `(G+C)/(A+C+
 
 Exact motif search uses literal symbol matching; overlapping occurrences are reported. A reverse-complement search also searches the reverse-complemented motif and labels its strand. IUPAC letters in either input are treated as literal symbols in this exact mode, not expanded to possible bases.
 
+Optional definite-IUPAC motif matching requires the set of bases represented by each input symbol to be a subset of those allowed by the motif symbol. A possible-only match is excluded. Overlap, reverse-strand coordinates and palindromic-pattern deduplication are preserved. A self-reverse-complement pattern is reported once per interval, with + as the representative strand.
+
 A palindrome is a 4–12 nt unambiguous substring that is exactly equal to its reverse complement. Tandem repeats are exact adjacent copies of a 1–6 nt unambiguous unit, with at least three copies. Hits use 1-based inclusive coordinates. These settings are fixed and visible in the interface.
 
 ## Pairwise comparison
 
 The comparison uses global Needleman-Wunsch dynamic programming with scores: exact symbol match `+2`, mismatch `−1`, gap `−2`. It aligns complete sequences, supports IUPAC symbols as literal characters, and limits each sequence to 1,500 nt to bound browser memory. Reported identity is exact matches divided by all alignment columns, including gap columns. This is a simple global alignment, not a local database search or a biological homology claim.
+
+Contiguous differences of the same kind are grouped: canonical substitutions, ambiguity-symbol differences, insertions in B relative to A, and deletions from A relative to B. A gap consumes no input coordinate. Indel anchors are the number of consumed input bases before the event; 0 means before the first base. Repeat-associated placements may be equivalent; events are not HGVS-normalized variants. The alignment CSV includes all columns, event boundaries/anchors, actual scoring, identity and its alignment-column denominator. Literal N=N is a symbol match, not proof of nucleotide identity.
 
 ## Example sequences and mutation explorer
 
@@ -46,6 +67,22 @@ The synthetic teaching sequence is clearly labelled and is not presented as a bi
 
 The HBB teaching explorer changes one unambiguous DNA base. A selected base identical to the reference is classified as `unchanged`, not as a synonymous substitution. For complete, unambiguous codons under the standard genetic code, synonymous and missense substitutions are distinguished from stop-gain (`nonsense`), stop-loss, and stop-retained changes. These are codon-level classifications and do not predict transcript processing or the biological impact of a variant.
 
-## Short-oligonucleotide melting-temperature estimate
+## Composition statistics
 
-For an unambiguous sequence of 4–14 nt, the interface shows the Wallace-rule estimate `2 × (A+T) + 4 × (G+C)` °C. This is a rough screening approximation for short oligonucleotides. It is not a measured melting temperature and does not incorporate nearest-neighbour enthalpy/entropy, salt concentration, strand concentration, mismatches, terminal chemistry, or assay conditions. Ambiguous or longer sequences do not receive an estimate. Molecular mass is not calculated.
+Skews use the oriented input strand: GC skew = `(G−C)/(G+C)`, AT skew = `(A−T)/(A+T)`. Ambiguous symbols do not contribute. A zero denominator is undefined, not zero. Taking the reverse complement negates both skews where defined. These global fragment statistics are not replication-origin predictions.
+
+All 16 dinucleotides count overlapping adjacent unambiguous pairs in the linear input. A pair containing ambiguity is excluded, and adjacency is never bridged across an unknown symbol. Frequency = count / number of counted pairs. Sequence ends are not joined.
+
+CpG count is count(CG). CpG pair percentage divides by counted pairs. The conventional observed/expected statistic is `count(CG) × full length / (count(C) × count(G))`. It is undefined for ambiguous input or absent C/G. This is a composition model, not a methylation assay or CpG-island prediction; short fragments are especially sensitive to sampling and boundary effects.
+
+## Conditional properties and findings
+
+Melting temperature is deferred. The former Wallace value omitted experimental conditions; a future implementation must validate a thermodynamic parameter set and require explicit salt/strand concentration and supported oligonucleotide assumptions. No numerical Tm is currently emitted.
+
+Integrated findings are deterministic calculations from the input and selected settings, with exact counts separated from rule-dependent coding candidates and limits on biological interpretation. Analysis CSV contains the complete input, version, settings, denominators, all frames/ORFs/usage/GC windows/motif and repeat hits, composition statistics, and findings. Print retains complete input/translations/ORFs and lists screen-selected pattern examples with visible display caps; CSV retains all hits. Context and initiation settings accompany both formats. A copied summary contains the same settings and limitations.
+
+## References
+
+- [NCBI genetic-code tables and Starts rows](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi), checked 2026-11-22. Tables 1/2 were already present; the added tables 5/11 and every permitted start are tested against published rows.
+- [EMBOSS cpgplot](https://emboss.sourceforge.net/apps/release/6.6/emboss/apps/cpgplot.html): conventional CpG observed/expected interpretation. SeqScope does not implement its island classifier.
+- [Genome synthesis/translation processing reference](https://www.ncbi.nlm.nih.gov/books/NBK21111/): initiation-specific methionine formylation and internal Met.
