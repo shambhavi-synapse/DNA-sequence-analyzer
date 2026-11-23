@@ -20,11 +20,12 @@ A static, client-side bioinformatics workspace for sequence composition, strand 
 - Plot sliding-window GC content and show codon counts, strand-aware positions, motifs, repeats, and reverse-complement palindromes.
 - Align two sequences globally with Needleman-Wunsch using explicit match/mismatch/gap scores and a 1,500 nt per-sequence limit.
 - Inspect grouped alignment differences relative to sequence A, including indel anchors and ambiguous-symbol differences.
+- Map EcoRI, HindIII, BamHI, PstI and NotI sites on linear DNA, distinguishing recognition intervals, both aligned strand-cut boundaries and input-strand fragment lengths. Each enzyme is mapped separately; experimental digestion efficiency is not predicted.
 - Export FASTA, complete analysis/alignment CSVs, deterministic findings, and printable reports with analysis version, full input and settings.
 
 ### Learning tools
 
-- Explore contains the base-pairing explorer, RNA codon builder, HBB substitution example and labelled synthetic mutation demonstrations.
+- Explore contains the base-pairing explorer, RNA codon builder and general Mutation Lab: custom coding DNA, six frames, selected genetic code, nucleotide substitution and codon consequence. The complete HBB c.20A>T preset and labelled synthetic mutation demonstrations remain available.
 - Molecular Notes contains twelve text-led Essential Concepts, a compact collection on genomic structure, variation and regulation, and sourced genetics examples from everyday life. These explain general biology and do not predict personal traits.
 - A compact example strip loads six locally bundled inputs: complete human HBB CDS, synthetic human telomeric repeats, natural GFP CDS, human MT-CO1 CDS, the complete 48,502-nt lambda genome, and a defined E. coli K-12 MG1655 lac region. Source accession/version, coordinates, orientation and selected reference annotations accompany each example. Earlier teaching sequences remain available under secondary controls.
 - Compare includes a matched 444-nt HBB reference versus reconstructed c.20A>T teaching pair, with the single GAG-to-GTG substitution documented.
@@ -58,22 +59,22 @@ Tests use Node's built-in test runner:
 node --test
 ```
 
-They cover input/FASTA validation, composition, ambiguity, IUPAC transformations, canonical standard-code entries, table 2 reassigned codons, six frames, ORF coordinates and boundaries, sliding GC, motifs, repeats, global alignment, codon counts, sequence-property estimates, workspace routing, and the HBB coding variant. GitHub Actions runs the same suite for pushes and pull requests.
+They cover input/FASTA validation, composition, ambiguity, IUPAC transformations, canonical standard-code entries, table 2 reassigned codons, six frames, ORF coordinates and boundaries, sliding GC, motifs, repeats, global alignment, codon counts, sequence-property estimates, workspace routing, and the HBB coding variant. GitHub Actions runs tests and the static build for pull requests and pushes to `main` or `codex/**` branches.
 
-Validation status is recorded in [Validation notes](docs/VALIDATION.md). Automated tests do not replace external reference comparison or experimental validation. The NCBI ORFfinder comparison is pending unless explicitly marked completed in that file.
+Current maintenance verification is recorded in [the repository cleanup audit](docs/MAINTENANCE_CLEANUP.md). Earlier [validation notes](docs/VALIDATION.md) are retained as historical evidence. Automated tests do not replace external reference comparison or experimental validation. The NCBI ORFfinder comparison is pending unless explicitly marked completed in that file.
 
 ## Deployment
 
-The repository uses GitHub Actions and GitHub Pages. No paid service or runtime is required. The review branch includes a dependency-free production build:
+The repository uses GitHub Actions and GitHub Pages. No paid service or runtime is required. The deployed `main` branch uses a dependency-free production build:
 
 ```sh
 node --test
 node scripts/build-static.mjs
 ```
 
-The build writes `dist/`, validates local asset and module references, and creates a SHA-256 `release-manifest.json`. Serve `dist/` to inspect the production-equivalent output. The proposed Pages workflow runs tests, builds and uploads only `dist/`; it is inactive until approved changes reach `main`. The existing owner-private staging Site is separate from GitHub Pages.
+The build writes `dist/`, validates local asset and module references, and creates a SHA-256 `release-manifest.json`. Serve `dist/` to inspect the production-equivalent output. The active Pages workflow (`.github/workflows/pages.yml`) runs tests, builds and uploads only `dist/` after a push to `main`, or a manual run on `main`. Pull requests run verification without deploying. Local preview files and `dist/` are Git-ignored.
 
-See [release readiness and rollback](docs/RELEASE-READINESS.md) for PR dependencies, approval gates, preview parity, release steps and remaining verification limits. Do not merge or change production until the owner approves.
+See [release readiness and rollback](docs/RELEASE-READINESS.md) for the historical release procedure and rollback guidance, and [the final scientific release review](docs/FINAL_RELEASE_REVIEW.md) for the shipped features and sources. Maintenance changes require review before merging or changing production.
 
 ## References
 
@@ -93,7 +94,7 @@ Created by **Shambhavi**. The idea was to bring sequence analysis, scientific vi
 
 ## SeqScope visual identity and verification
 
-SeqScope retains the existing browser-local scientific engine and repository URL. Its graphite, vermilion and ivory interface includes linked GC/ORF/sequence inspection, an inline six-frame codon inspector, responsive nucleotide rows and locally bundled artwork. See [the refinement verification record](docs/SEQSCOPE-VALIDATION.md) for executed checks, source provenance and limitations. Logo variants are in `assets/seqscope-*.svg`; design tokens and responsive refinements are in `seqscope.css`.
+SeqScope retains the existing browser-local scientific engine and repository URL. Its graphite, vermilion and ivory interface includes linked GC/ORF/sequence inspection, an inline six-frame codon inspector, responsive nucleotide rows and locally bundled artwork. See [the refinement verification record](docs/SEQSCOPE-VALIDATION.md) for executed checks, source provenance and limitations. Approved logo variants are in `assets/branding/`; design tokens and responsive refinements are in `seqscope.css`.
 
 ## Official branding and printable reports
 
@@ -102,5 +103,3 @@ The approved SeqScope mark is traced from the owner's reference artwork, includi
 Print Report and normal browser printing use the same dedicated A4 report. It includes the official logo as a real SVG image, complete sequence transformations, all six translations, complete candidate ORF tables, codon usage and current pattern results. Full strings are retained beyond screen display caps. A verified sample is in [the sample report PDF](docs/review/seqscope-sample-report.pdf). Browser printing remains entirely local.
 
 The public GitHub Pages repository path is case-sensitive: use **DNA-sequence-analyzer** in the live URL.
-
-The Mutation Lab supports custom coding DNA, six frames and the selected genetic code. Linear restriction mapping covers EcoRI, HindIII, BamHI, PstI and NotI with recognition intervals, both strand-cut boundaries and input-strand fragments. Complete results are retained in CSV and printable reports. Release evidence and verified source boundaries are in [the final scientific review](docs/FINAL_RELEASE_REVIEW.md).
