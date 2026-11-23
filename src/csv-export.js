@@ -1,3 +1,4 @@
+import {restrictionMap,RESTRICTION_METHOD,RESTRICTION_SOURCE} from './restriction.js';
 import {countComposition,complement,reverseComplement,transcribeCodingStrand,transcribeTemplateStrand,slidingGC} from './sequence.js';
 import {sixFrames,findORFs} from './translation.js';
 import {CODE_INFO,startCodons} from './translation.js';
@@ -36,6 +37,13 @@ export function analysisCSV({record,code='1',minimum=30,codonFrame='+1',gcWindow
  add('settings',label,'motif_mode',motifMode);
  add('summary',label,'integrated_findings',findingsText(options));
  for(const note of contextNotes(options))add('limitation',label,'context_note',note);
+ add('settings',label,'restriction_topology','linear',{notes:RESTRICTION_METHOD});
+ add('metadata',label,'restriction_source',RESTRICTION_SOURCE);
+ for(const map of restrictionMap(sequence)){
+  add('restriction_summary',label,map.name,map.recognition,{count:map.sites.length,notes:`Top/bottom offsets ${map.topOffset}/${map.bottomOffset}; each enzyme mapped separately`});
+  for(const site of map.sites)add('restriction_site',label,map.name,`${site.topCut}/${site.bottomCut}`,{start_1based:site.start,end_1based:site.end,notes:'Value: input/aligned-complement cut boundaries, bases to the left'});
+  for(const fragment of map.fragments)add('restriction_fragment',label,map.name,fragment.length,{unit:'nt',start_1based:fragment.start,end_1based:fragment.end,length_nt:fragment.length,notes:'Input-strand partition after complete single-enzyme cleavage'});
+ }
  add('metadata',label,'input_sequence',sequence,{unit:'nt'});
  add('settings',label,'genetic_code_table',String(code),{notes:CODE_INFO[code].name});
  add('settings',label,'minimum_orf_length',minimum,{unit:'nt',notes:'Length includes terminal stop codon'});

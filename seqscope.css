@@ -356,3 +356,14 @@ footer .brand-light{display:none!important}footer .brand-dark{display:block!impo
 .compare-example { margin-block: 14px; }
 #curated-source-list details { margin-block: 10px; }
 @media (max-width:700px) { .metric.longest-orf-metric { grid-column: 1 / -1; } .analysis-pagination { gap: 8px; } }
+
+/* Compact laboratory controls retain the existing panel and theme tokens. */
+#mutation-input{min-height:80px;max-height:150px;width:100%}
+#mutation-lab .context-controls{grid-template-columns:repeat(2,minmax(0,1fr));margin:12px 0}
+#mutation-lab input,#mutation-lab select{max-width:100%;min-width:0}
+#restriction-results details{padding:8px 0;border-bottom:1px solid var(--line)}
+.restriction-sites{display:flex;flex-direction:column;align-items:flex-start;max-height:240px;overflow:auto}
+.restriction-sites button{text-align:left;white-space:normal}
+#restriction-results p{overflow-wrap:anywhere}
+
+@media(min-width:900px){#mutation-lab .context-controls{grid-template-columns:repeat(4,minmax(0,1fr))}}

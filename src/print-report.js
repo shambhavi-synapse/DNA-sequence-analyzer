@@ -1,3 +1,5 @@
+import {restrictionMap,RESTRICTION_METHOD} from './restriction.js';
+import {findMotif,findTandemRepeats,findPalindromes} from './motifs.js';
 import {complement,reverseComplement,transcribeCodingStrand,transcribeTemplateStrand} from './sequence.js';
 import {sixFrames,CODE_INFO,startCodons,GENETIC_CODES} from './translation.js';
 import {findingsText,findingsModel} from './findings.js';
@@ -37,6 +39,8 @@ export function reportHTML(model){
   const midpoint=Math.ceil(rows.length/2);
   html+='<div class="report-codon-grid">'+(rows.length>12?[rows.slice(0,midpoint),rows.slice(midpoint)]:[rows]).map(group=>table(['DNA codon','Amino acid','Count','Frequency'],group,'report-codon-usage')).join('')+'</div>';
  }else html+='<p>No unambiguous complete codons in this frame.</p>';
+ html+='</section><section><h2>Restriction recognition sites · linear DNA</h2><p>'+escape(RESTRICTION_METHOD)+'</p>';
+ for(const map of restrictionMap(record.sequence))html+='<h3>'+map.name+' · '+map.sites.length+' sites</h3><p>Input-strand fragments: '+map.fragments.map(f=>f.length).join(', ')+' nt</p>'+table(['Recognition interval','Input cut boundary','Complement cut boundary'],map.sites.map(site=>[`${site.start}–${site.end}`,site.topCut,site.bottomCut]));
  html+='</section><section><h2>Integrated findings and settings</h2>'+model.summary.split('\n').map(line=>`<p>${escape(line)}</p>`).join('')+'</section><section class="report-patterns"><h2>Motifs and repeated patterns</h2><div data-report-patterns></div></section><p class="report-end"><strong>SeqScope</strong> · Browser-local DNA analysis. Results require biological context and are not a clinical interpretation.</p>';
  return html;
 }
@@ -57,15 +61,10 @@ export function preparePrintReport(getAnalysis,doc=document){
  else host.querySelector('[data-report-gc]').textContent=doc.querySelector('#gc-chart')?.textContent??'No GC profile available.';
  const windowValue=analysis.gcWindow??doc.getElementById('gc-window')?.value;
  host.querySelector('[data-report-window]').textContent=`Window: ${windowValue} nt. Positions on the horizontal axis are window starts in the input.`;
- const patterns=host.querySelector('[data-report-patterns]');
- for(const selector of ['#motif-results','#repeat-results']){
-  const original=doc.querySelector(selector);if(!original?.textContent.trim())continue;
-  const clone=original.cloneNode(true);
-  clone.removeAttribute('id');
-  clone.querySelectorAll('[id]').forEach(node=>node.removeAttribute('id'));
-  clone.querySelectorAll('button').forEach(button=>{const text=doc.createElement('span');text.className='report-hit';text.textContent=button.textContent;button.replaceWith(text);});
-  patterns.append(clone);
- }
+ const patterns=host.querySelector('[data-report-patterns]'),seq=analysis.record.sequence;
+ const hits=String(analysis.motif||'').trim()?findMotif(seq,analysis.motif,analysis.motifReverse,analysis.motifMode):[];
+ patterns.innerHTML='<h3>Motif matches · '+escape(analysis.motif||'(none)')+'</h3>'+table(['Interval','Strand','Pattern'],hits.map(h=>[`${h.start}–${h.end}`,h.strand,h.motif]))+'<h3>All tandem repeats</h3>'+table(['Interval','Unit','Copies','Length (nt)'],findTandemRepeats(seq,{minUnit:1,maxUnit:6,minCopies:3}).map(h=>[`${h.start}–${h.end}`,h.unit,h.copies,h.length]))+'<h3>Reverse-complement palindromes</h3>'+table(['Interval','Pattern'],findPalindromes(seq).map(h=>[`${h.start}–${h.end}`,h.motif]));
+
 }
 export function initializePrintReport(getAnalysis,doc=document,view=window){
  const prepare=()=>preparePrintReport(getAnalysis,doc);

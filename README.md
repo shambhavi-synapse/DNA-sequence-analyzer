@@ -102,3 +102,5 @@ The approved SeqScope mark is traced from the owner's reference artwork, includi
 Print Report and normal browser printing use the same dedicated A4 report. It includes the official logo as a real SVG image, complete sequence transformations, all six translations, complete candidate ORF tables, codon usage and current pattern results. Full strings are retained beyond screen display caps. A verified sample is in [the sample report PDF](docs/review/seqscope-sample-report.pdf). Browser printing remains entirely local.
 
 The public GitHub Pages repository path is case-sensitive: use **DNA-sequence-analyzer** in the live URL.
+
+The Mutation Lab supports custom coding DNA, six frames and the selected genetic code. Linear restriction mapping covers EcoRI, HindIII, BamHI, PstI and NotI with recognition intervals, both strand-cut boundaries and input-strand fragments. Complete results are retained in CSV and printable reports. Release evidence and verified source boundaries are in [the final scientific review](docs/FINAL_RELEASE_REVIEW.md).

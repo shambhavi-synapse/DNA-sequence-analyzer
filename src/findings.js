@@ -1,10 +1,11 @@
+import {restrictionMap} from './restriction.js';
 import {countComposition} from './sequence.js';
 import {CODE_INFO,startCodons,GENETIC_CODES,findORFs} from './translation.js';
 import {sequenceProperties} from './properties.js';
 import {codonUsage} from './codon.js';
 import {findMotif,findPalindromes,findTandemRepeats} from './motifs.js';
 
-export const ANALYSIS_VERSION='2026-11-22.2';
+export const ANALYSIS_VERSION='2026-11-23.1';
 export function contextNotes({source='unspecified',sequenceType='unknown',code='1',startRule='atg'}={}){
   const starts=startCodons(code,startRule);
   const notes=[`Table ${code}: ${CODE_INFO[code].name}. Candidate starts: ${starts.join(', ')}. The initiation rule determines which start-to-stop intervals are reported.`];
@@ -24,7 +25,7 @@ export function findingsModel({record,code='1',source='unspecified',sequenceType
   const candidates=orfs??findORFs(sequence,minimum,code,startRule);
   const usage=codonUsage(sequence,codonFrame,code);
   const hits=motif.trim()?findMotif(sequence,motif,motifReverse,motifMode):[];
-  return {version:ANALYSIS_VERSION,composition:c,properties:p,usage,candidates,motifHits:hits,
+  return {restriction:restrictionMap(sequence),version:ANALYSIS_VERSION,composition:c,properties:p,usage,candidates,motifHits:hits,
     settings:{code,source,sequenceType,startRule,minimum,codonFrame,gcWindow,motif,motifReverse,motifMode},
     palindromeCount:(features?.palindromes??findPalindromes(sequence)).length,repeatCount:(features?.repeats??findTandemRepeats(sequence,{minUnit:1,maxUnit:6,minCopies:3})).length,
     notes:contextNotes({source,sequenceType,code,startRule})};
@@ -42,6 +43,7 @@ export function findingsText(options){
     `Patterns: ${model.motifHits.length} motif hits (${s.motif||'no pattern'}; ${s.motifMode}; ${s.motifReverse?'both strands':'forward only'}); ${model.palindromeCount} reverse-complement palindrome intervals; ${model.repeatCount} tandem repeat intervals. Intervals retain their input positions and may overlap.`,
     `Candidate ORFs: ${model.candidates.length}; minimum ${s.minimum} nt including stop; ${model.candidates.filter(o=>o.unresolvedCodons).length} with unresolved internal codons; starts ${startCodons(s.code,s.startRule).join('/')}; stops ${stops.join('/')}. ${longest?`Longest: ${longest.frame}, ${longest.start}–${longest.end}, ${longest.length} nt.`:'No complete candidate meets the selected start, stop and minimum-length criteria.'}`,
     `Codon usage: frame ${s.codonFrame}, ${model.usage.total} unambiguous codons (including stops); ${model.usage.ambiguous} excluded. Frequencies characterize codon composition across the selected frame.`,
+    `Restriction sites (linear DNA, separate enzyme maps): ${model.restriction.map(map=>`${map.name} ${map.sites.length}`).join('; ')}. Recognition intervals and both strand-cut boundaries are included in CSV and report exports.`,
     `Settings: source ${s.source}; sequence type ${s.sequenceType}; genetic code table ${s.code}; initiation ${s.startRule}; GC window ${s.gcWindow} nt. Coordinates: 1-based inclusive on input; reverse frames read the reverse complement.`,
     ...model.notes,
     'Tm deferred: a supported thermodynamic model with salt and strand concentration is required. CSV includes the full input and analysis settings for reproduction.'

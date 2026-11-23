@@ -90,3 +90,9 @@ Integrated findings are deterministic calculations from the input and selected s
 - [NCBI genetic-code tables and Starts rows](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi), checked 2026-11-22. Tables 1/2 were already present; the added tables 5/11 and every permitted start are tested against published rows.
 - [EMBOSS cpgplot](https://emboss.sourceforge.net/apps/release/6.6/emboss/apps/cpgplot.html): conventional CpG observed/expected interpretation. SeqScope does not implement its island classifier.
 - [Genome synthesis/translation processing reference](https://www.ncbi.nlm.nih.gov/books/NBK21111/): initiation-specific methionine formylation and internal Met.
+
+## Release additions (23 November 2026)
+
+Mutation Lab accepts general single-record inputs and selected frames/code tables. Substitution positions always refer to the input; reverse-frame triplets are re-derived after substitution. Classifications use codon meanings rather than initiation chemistry. Ambiguous triplets and incomplete frame ends are neutral.
+
+Restriction maps use the five canonical palindromic sites documented in `src/restriction.js`. Recognition intervals are 1-based inclusive; cleavage boundaries count input bases to the left (0..length) on input/aligned-complement strands. Separate linear single-enzyme maps report input-strand fragment intervals and lengths. Exact matches only; ambiguity can hide additional sites. Staggered complementary ends, methylation, reaction activity and circular topology are not inferred. CSV, report and deterministic findings include this method and results. See `docs/FINAL_RELEASE_REVIEW.md` for reference specifications and validation.
