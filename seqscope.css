@@ -304,3 +304,66 @@ footer .brand-light{display:none!important}footer .brand-dark{display:block!impo
 }
 @page{@bottom-right{content:counter(page);font:8.5pt Manrope,Arial,sans-serif;color:#494743}}
 @media print{#print-report .report-sequence h3{break-after:avoid}#print-report .report-gc{break-inside:avoid}#print-report .report-end{margin-top:3mm;padding-top:2mm}}
+
+/* Targeted analysis controls retain the existing theme and type system. */
+.sequence-context { margin-block: 1rem; }
+.sequence-context summary { cursor: pointer; }
+.context-controls { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-block: 1rem; }
+.context-controls label { display: grid; gap: .5rem; font-size: .85rem; }
+.context-controls select, #genetic-code { max-width: 100%; min-width: 0; }
+.analysis-links { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; margin-block: 1rem; font-size: .85rem; }
+.analysis-links a { color: var(--text); }
+#composition-statistics dl { display: grid; grid-template-columns: 1fr auto; gap: .3rem 1rem; font-size: .85rem; }
+#composition-statistics dd { margin: 0; font-family: var(--mono); }
+#composition-statistics summary { cursor: pointer; }
+#composition-statistics table { width: 100%; font-size: .8rem; }
+#findings-text p { margin-block: .7rem; overflow-wrap: anywhere; font-size: .9rem; }
+#coding-context p { margin-block: .6rem; }
+.alignment-differences { max-height: 18rem; overflow: auto; margin-block: 1rem; }
+.alignment-differences button { display: block; width: 100%; text-align: left; overflow-wrap: anywhere; margin-block: .35rem; }
+#composition-distribution, #sequence-features, #coding-analysis, #integrated-findings, #sequence-overview { scroll-margin-top: 6rem; }
+@media (max-width: 700px) { .context-controls { grid-template-columns: 1fr; } }
+
+/* Compact examples and bounded result pages, within the established analyzer. */
+.compact-examples { padding: 0 0 16px; margin-bottom: 18px; }
+.compact-examples .example-library-head { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+.compact-examples .example-library-head h3 { font-size: 1rem; }
+.curated-strip { display: flex; gap: 8px; overflow-x: auto; padding: 8px 2px; max-width: 100%; }
+.example-choice { flex: 0 0 auto; display: grid; gap: 2px; text-align: left; padding: 9px 12px; border: 1px solid var(--line); border-radius: 7px; background: var(--paper); color: var(--text); cursor: pointer; min-height: 52px; }
+.example-choice strong { font-size: .875rem; font-weight: 600; }
+.example-choice small { color: var(--muted); font-size: .8125rem; }
+.example-choice[aria-pressed=true] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); background: var(--soft); }
+.example-introduction { font-size: .875rem; line-height: 1.5; margin: 4px 0 8px; max-width: 90ch; }
+.compact-examples details { font-size: .875rem; margin-block: 5px; }
+.compact-examples summary { cursor: pointer; }
+#example-provenance p { margin-block: .5rem; overflow-wrap: anywhere; }
+.metric.longest-orf-metric { grid-column: span 2; }
+.metric.longest-orf-metric strong { font-size: 1.5rem; }
+.longest-orf-metric .metric-detail { display: block; font-size: .875rem; color: var(--muted); margin-block: .4rem; }
+.longest-orf-metric button { margin-top: .5rem; }
+.longest-candidate { border-left: 3px solid var(--accent); padding-left: 12px; margin-block: 1rem; }
+.longest-candidate .orf-item { width: 100%; }
+.orf-candidate-details { margin-top: 1rem; }
+.orf-candidate-details summary, .pattern-block summary { cursor: pointer; }
+.analysis-pagination { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-block: 12px; font-size: .875rem; }
+.analysis-pagination input { width: 7rem; padding: 5px 8px; }
+.analysis-pagination button { padding: 7px 12px; min-height: 40px; }
+.analysis-pagination [disabled] { opacity: .5; cursor: default; }
+.repeat-tract { display: grid; text-align: left; width: 100%; gap: 4px; margin-block: 8px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--text); cursor: pointer; }
+.repeat-tract strong { font-size: 1rem; }
+.repeat-tract span { font-size: .875rem; color: var(--muted); }
+.orf-detail code { white-space: pre-wrap; overflow-wrap: anywhere; }
+.compare-example { margin-block: 14px; }
+#curated-source-list details { margin-block: 10px; }
+@media (max-width:700px) { .metric.longest-orf-metric { grid-column: 1 / -1; } .analysis-pagination { gap: 8px; } }
+
+/* Compact laboratory controls retain the existing panel and theme tokens. */
+#mutation-input{min-height:80px;max-height:150px;width:100%}
+#mutation-lab .context-controls{grid-template-columns:repeat(2,minmax(0,1fr));margin:12px 0}
+#mutation-lab input,#mutation-lab select{max-width:100%;min-width:0}
+#restriction-results details{padding:8px 0;border-bottom:1px solid var(--line)}
+.restriction-sites{display:flex;flex-direction:column;align-items:flex-start;max-height:240px;overflow:auto}
+.restriction-sites button{text-align:left;white-space:normal}
+#restriction-results p{overflow-wrap:anywhere}
+
+@media(min-width:900px){#mutation-lab .context-controls{grid-template-columns:repeat(4,minmax(0,1fr))}}
