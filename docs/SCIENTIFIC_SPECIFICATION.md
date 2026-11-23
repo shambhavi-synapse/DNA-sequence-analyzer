@@ -43,7 +43,7 @@ Selecting an ORF or translation tile synchronizes the codon-usage frame. Codon u
 
 ## Sliding-window GC
 
-The window advances by one nucleotide. Each complete window reports `(G+C)/(A+C+G+T) × 100`; ambiguity is excluded from that window's denominator. A window with no unambiguous base has undefined GC and is omitted from the plotted line. Inputs shorter than three nucleotides do not show a profile. Very large sequences are analyzed locally; the rendered sequence viewer is capped at 12,000 nucleotides for responsiveness.
+The window advances by one nucleotide. Each complete window reports `(G+C)/(A+C+G+T) × 100`; ambiguity is excluded from that window's denominator. A window with no unambiguous base has undefined GC and is omitted from the plotted line. Inputs shorter than three nucleotides do not show a profile. Very large sequences are analyzed locally; the rendered sequence viewer uses pages of 600 nt on desktop and 120 nt at mobile widths. The position control can reach every input base. Translated frame strips show 60 codons at a time; all codons remain browsable through the first-codon control. Calculations and exports always use the complete input.
 
 ## Motifs, palindromes, and repeats
 
@@ -61,7 +61,11 @@ Contiguous differences of the same kind are grouped: canonical substitutions, am
 
 ## Example sequences and mutation explorer
 
-The synthetic teaching sequence is clearly labelled and is not presented as a biological reference. The HBB example is the first 117 coding nucleotides from Homo sapiens HBB mRNA RefSeq NM_000518.5. Its c.20A>T example illustrates the GAG-to-GTG codon change. Protein residue numbering in mature hemoglobin commonly omits the initiating methionine, which is why the coding variant is called p.Glu6Val in the hemoglobin literature while transcript translation includes the initial methionine.
+The synthetic teaching sequence is clearly labelled and is not presented as a biological reference. The legacy HBB teaching fragment is the first 117 coding nucleotides from Homo sapiens HBB mRNA RefSeq NM_000518.5. Its c.20A>T example illustrates the GAG-to-GTG codon change. Protein residue numbering in mature hemoglobin commonly omits the initiating methionine, which is why the coding variant is called p.Glu6Val in the hemoglobin literature while transcript translation includes the initial methionine.
+
+The primary example strip contains complete HBB coding DNA (NM_000518.5, transcript 51–494), natural GFP coding DNA (M62653.1, 26–742), human MT-CO1 (NC_012920.1, 5904–7445, table 2), complete lambda (NC_001416.1, 1–48502, table 11), and the lac region (NC_000913.3, 361200–367550 reverse-complemented, table 11), plus a synthetic TTAGGG × 10 tract. Coding examples use annotated CDS boundaries and published protein expectations. Compare contains matched complete HBB CDSs differing only at c.20A>T. See [curated examples and verification](CURATED_EXAMPLES_REVIEW.md).
+
+Longest ORF selection is display-only and uses actual detected length, with the existing candidate order resolving ties. All candidates remain available, listed longest first in pages of 20. Repeat presentation prioritizes longest non-overlapping tracts, favoring primitive units for equal-length intervals; every shorter, nested or overlapping hit remains in the complete results and exports. The underlying repeat and ORF calculations are unchanged.
 
 ## Single-base substitution interpretation
 

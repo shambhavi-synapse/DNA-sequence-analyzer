@@ -26,7 +26,9 @@ A static, client-side bioinformatics workspace for sequence composition, strand 
 
 - Explore contains the base-pairing explorer, RNA codon builder, HBB substitution example and labelled synthetic mutation demonstrations.
 - Molecular Notes contains twelve text-led Essential Concepts, a compact collection on genomic structure, variation and regulation, and sourced genetics examples from everyday life. These explain general biology and do not predict personal traits.
-- The example library includes synthetic reading-frame and telomere-repeat sequences, a vertebrate mitochondrial-code demonstration, and a 117 nt HBB fragment from RefSeq NM_000518.5, plus its documented c.20A>T teaching substitution.
+- A compact example strip loads six locally bundled inputs: complete human HBB CDS, synthetic human telomeric repeats, natural GFP CDS, human MT-CO1 CDS, the complete 48,502-nt lambda genome, and a defined E. coli K-12 MG1655 lac region. Source accession/version, coordinates, orientation and selected reference annotations accompany each example. Earlier teaching sequences remain available under secondary controls.
+- Compare includes a matched 444-nt HBB reference versus reconstructed c.20A>T teaching pair, with the single GAG-to-GTG substitution documented.
+- The overview highlights the longest actual candidate ORF; candidate lists, translated codons and nucleotide pages remain browsable without truncating calculations or exports. See [curated source and verification details](docs/CURATED_EXAMPLES_REVIEW.md).
 - Sequence context settings distinguish unknown fragments, genomic DNA and coding sequences; concise notes explain introns, initiation chemistry and code-specific limitations. No organism or gene is inferred from input.
 - Analyze, Compare, Explore, Molecular Notes and About are hash-addressable workspaces. Theme follows the operating system on a first visit; explicit Light, Dark and System preferences persist locally.
 
