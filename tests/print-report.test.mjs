@@ -6,7 +6,7 @@ import {findORFs} from '../src/translation.js';
 const example=(sequence='ATGAAATAG',code='1')=>reportModel({record:{header:'Synthetic report',sequence},minimum:6,code,orfs:findORFs(sequence,6,code)},'2026-11-08T00:00:00.000Z');
 test('the report includes the approved image, scientific values, all six frames and coordinate rules',()=>{
  const html=reportHTML(example());
- assert.ok(html.includes('src="assets/branding/seqscope-logo-print.svg"'));
+ assert.ok(html.includes('src="assets/branding/seqscope-logo-print.svg?v=seqscope-io-20261127"'));
  assert.ok(html.includes('DNA Sequence Analysis Report'));assert.ok(html.includes('9 nt'));
  for(const protein of ['MK*','*N','EI','LFH','YF','IS'])assert.ok(html.includes(protein));
  assert.ok(html.includes('1–9'));assert.ok(html.includes('1-based inclusive'));assert.ok(html.includes('computational results'));
@@ -42,7 +42,7 @@ test('approved logo variants are self-contained vector assets and all icon sizes
   assert.ok(svg.includes('fill-rule="evenodd"'));
  }
  for(const file of ['assets/branding/apple-touch-icon.png','assets/branding/icon-192.png','assets/branding/icon-512.png','assets/favicon.svg','assets/favicon.ico'])assert.ok(existsSync(new URL('../'+file,import.meta.url)));
- const manifest=JSON.parse(readFileSync(new URL('../site.webmanifest',import.meta.url),'utf8'));assert.equal(manifest.name,'SeqScope');assert.equal(manifest.start_url,'./#analyze');
+ const manifest=JSON.parse(readFileSync(new URL('../site.webmanifest',import.meta.url),'utf8'));assert.equal(manifest.name,'SeqScope.io');assert.equal(manifest.start_url,'./#analyze');
 });
 test('portable print identity preserves every approved outline without depending on gradient rendering',()=>{
  const normal=readFileSync(new URL('../assets/branding/seqscope-logo-light.svg',import.meta.url),'utf8');

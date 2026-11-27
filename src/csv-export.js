@@ -3,7 +3,7 @@ import {countComposition,complement,reverseComplement,transcribeCodingStrand,tra
 import {sixFrames,findORFs} from './translation.js';
 import {CODE_INFO,startCodons} from './translation.js';
 import {sequenceProperties} from './properties.js';
-import {findingsText,ANALYSIS_VERSION,contextNotes} from './findings.js';
+import {findingsText,ANALYSIS_VERSION,contextNotes} from './findings.js?v=seqscope-io-20261127';
 import {codonUsage} from './codon.js';
 import {findMotif,findPalindromes,findTandemRepeats} from './motifs.js';
 

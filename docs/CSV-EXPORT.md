@@ -25,3 +25,7 @@ Quoted fields escape internal double quotes. User-supplied sequence labels begin
 ## Migration from the former summary CSV
 
 The previous `dna-analysis.csv` had `metric,value,unit`. The replacement is `seqscope-analysis.csv`. Select `dataset=composition` to recover those metrics: `length` is now `sequence_length`; `count_A/C/G/T`, `ambiguous_count`, `gc_content` and `at_content` keep their meaning. Use column names rather than fixed column positions. Compare's `seqscope-alignment.csv` and FASTA files are unchanged.
+
+## Current project name and filenames
+
+The project is now named **SeqScope.io**. New downloads are named `SeqScope.io-analysis.csv` and `SeqScope.io-alignment.csv`. The earlier filenames above describe historical export migrations and samples; CSV schemas, scientific fields, coordinates and FASTA filenames are unchanged. The product label in deterministic findings changes with the name; numerical results and analysis version do not.

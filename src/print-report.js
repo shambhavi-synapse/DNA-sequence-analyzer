@@ -2,7 +2,7 @@ import {restrictionMap,RESTRICTION_METHOD} from './restriction.js';
 import {findMotif,findTandemRepeats,findPalindromes} from './motifs.js';
 import {complement,reverseComplement,transcribeCodingStrand,transcribeTemplateStrand} from './sequence.js';
 import {sixFrames,CODE_INFO,startCodons,GENETIC_CODES} from './translation.js';
-import {findingsText,findingsModel} from './findings.js';
+import {findingsText,findingsModel} from './findings.js?v=seqscope-io-20261127';
 
 const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const percent=value=>value===null?'Undefined':value.toFixed(2)+'%';
@@ -15,7 +15,7 @@ export function reportModel(options,preparedAt=new Date().toISOString()){
  return {...options,record,minimum,code:String(code),startRule,orfs:findings.candidates,preparedAt,composition:findings.composition,properties:findings.properties,frames:sixFrames(record.sequence,code),usage:findings.usage,findings,summary:findingsText(options)};
 }
 export function reportHTML(model){
- const header=`<header class="report-header"><img class="report-logo" src="assets/branding/seqscope-logo-print.svg" width="84" height="61" alt="SeqScope"><div><h1>DNA Sequence Analysis Report</h1><p>Prepared ${escape(model?.preparedAt??new Date().toISOString())}</p></div></header>`;
+ const header=`<header class="report-header"><img class="report-logo" src="assets/branding/seqscope-logo-print.svg?v=seqscope-io-20261127" width="1026" height="214" alt="SeqScope.io"><div><h1>DNA Sequence Analysis Report</h1><p>Prepared ${escape(model?.preparedAt??new Date().toISOString())}</p></div></header>`;
  if(!model)return header+'<p>Analyze a DNA sequence to generate a report.</p>';
  const {record,composition:c,frames,minimum,code,orfs,usage}=model;
  const stops=Object.keys(GENETIC_CODES[code]).filter(c=>GENETIC_CODES[code][c]==='*').join(', ');
@@ -41,7 +41,7 @@ export function reportHTML(model){
  }else html+='<p>No unambiguous complete codons in this frame.</p>';
  html+='</section><section><h2>Restriction recognition sites · linear DNA</h2><p>'+escape(RESTRICTION_METHOD)+'</p>';
  for(const map of restrictionMap(record.sequence))html+='<h3>'+map.name+' · '+map.sites.length+' sites</h3><p>Input-strand fragments: '+map.fragments.map(f=>f.length).join(', ')+' nt</p>'+table(['Recognition interval','Input cut boundary','Complement cut boundary'],map.sites.map(site=>[`${site.start}–${site.end}`,site.topCut,site.bottomCut]));
- html+='</section><section><h2>Integrated findings and settings</h2>'+model.summary.split('\n').map(line=>`<p>${escape(line)}</p>`).join('')+'</section><section class="report-patterns"><h2>Motifs and repeated patterns</h2><div data-report-patterns></div></section><p class="report-end"><strong>SeqScope</strong> · Browser-local DNA analysis. Results require biological context and are not a clinical interpretation.</p>';
+ html+='</section><section><h2>Integrated findings and settings</h2>'+model.summary.split('\n').map(line=>`<p>${escape(line)}</p>`).join('')+'</section><section class="report-patterns"><h2>Motifs and repeated patterns</h2><div data-report-patterns></div></section><p class="report-end"><strong>SeqScope.io</strong> · Browser-local DNA analysis. Results require biological context and are not a clinical interpretation.</p>';
  return html;
 }
 

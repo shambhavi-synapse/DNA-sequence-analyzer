@@ -25,7 +25,7 @@ test('choosing System resumes live OS updates and persists the preference',()=>{
 test('invalid or blocked storage falls back to System without breaking controls',()=>{
  for(const options of [{stored:'invalid',dark:true},{blocked:true,dark:true}]){const b=browser(options);b.bind();assert.equal(b.control.value,'system');assert.equal(b.root.dataset.theme,'dark');b.choose('light');assert.equal(b.root.dataset.theme,'light');}
 });
-test('explicit legacy preference is retained until a SeqScope preference is chosen',()=>{
+test('explicit legacy preference is retained until a SeqScope.io preference is chosen',()=>{
  const b=browser({legacy:'dark'});b.bind();assert.equal(b.control.value,'dark');b.choose('system');const reloaded=browser({stored:b.values.get('seqscope-theme'),legacy:'dark'});assert.equal(reloaded.root.dataset.themePreference,'system');assert.equal(reloaded.root.dataset.theme,'light');
 });
 test('cross-tab preference changes update the control and all root theme tokens',()=>{

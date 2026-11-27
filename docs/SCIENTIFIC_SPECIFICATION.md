@@ -88,7 +88,7 @@ Integrated findings are deterministic calculations from the input and selected s
 ## References
 
 - [NCBI genetic-code tables and Starts rows](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi), checked 2026-11-22. Tables 1/2 were already present; the added tables 5/11 and every permitted start are tested against published rows.
-- [EMBOSS cpgplot](https://emboss.sourceforge.net/apps/release/6.6/emboss/apps/cpgplot.html): conventional CpG observed/expected interpretation. SeqScope does not implement its island classifier.
+- [EMBOSS cpgplot](https://emboss.sourceforge.net/apps/release/6.6/emboss/apps/cpgplot.html): conventional CpG observed/expected interpretation. SeqScope.io does not implement its island classifier.
 - [Genome synthesis/translation processing reference](https://www.ncbi.nlm.nih.gov/books/NBK21111/): initiation-specific methionine formylation and internal Met.
 
 ## Release additions (23 November 2026)
