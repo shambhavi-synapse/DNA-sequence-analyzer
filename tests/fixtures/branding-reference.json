@@ -1,0 +1,23 @@
+{
+  "source": "assets/branding/approved-reference.webp",
+  "sha256": "e5f3e3eddb9245a54567bd716f6eb571da23c36a3f3be30f8f021317de12ed6a",
+  "sourceDimensions": [
+    1536,
+    512
+  ],
+  "logoViewBox": [
+    270,
+    135,
+    1026,
+    214
+  ],
+  "symbolViewBox": [
+    270,
+    135,
+    332,
+    214
+  ],
+  "sourceComponents": 24,
+  "note": "Source-derived vector contours with 0.6-source-pixel edge smoothing and neutral-ink antialias calibration; no substituted font or invented artwork.",
+  "sourceEncoding": "WebP VP8X (the upload was named .png)"
+}

@@ -36,7 +36,7 @@ export function findingsText(options){
   const stops=Object.keys(GENETIC_CODES[s.code]).filter(c=>GENETIC_CODES[s.code][c]==='*');
   const longest=model.candidates.reduce((best,o)=>!best||o.length>best.length?o:best,null);
   return [
-    `SeqScope analysis ${model.version} | ${options.record.header}`,
+    `SeqScope.io analysis ${model.version} | ${options.record.header}`,
     `Length: ${c.length} nt; A ${c.counts.A}, C ${c.counts.C}, G ${c.counts.G}, T ${c.counts.T}; ambiguous ${c.ambiguous}.`,
     `GC ${number(c.gc,2)}%; AT ${number(c.at,2)}%. Percentage denominator: ${c.known} unambiguous bases.`,
     `GC skew ${number(p.gcSkew)}; AT skew ${number(p.atSkew)} on the input strand. CpG ${p.cpgCount}; O/E ${number(p.cpgObservedExpected)}. Skew measures strand composition imbalance; CpG O/E compares the observed pattern with base-frequency expectation.`,

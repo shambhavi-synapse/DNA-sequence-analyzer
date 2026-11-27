@@ -1,6 +1,10 @@
-# SeqScope: DNA Sequence Analyzer
+# SeqScope.io
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/branding/seqscope-logo-dark.svg"><img src="assets/branding/seqscope-logo-light.svg" width="220" alt="SeqScope"></picture>
+**A Web-Based DNA Sequence Analysis and Molecular Biology Platform**
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/branding/seqscope-logo-dark.svg"><img src="assets/branding/seqscope-logo-light.svg" width="220" alt="SeqScope.io"></picture>
+
+The `.io` suffix is part of the project name and represents input/output. It does not imply ownership of a custom domain; the GitHub Pages URL below remains unchanged.
 
 A static, client-side bioinformatics workspace for sequence composition, strand transformations, six-frame translation, candidate ORFs, motifs, codon usage, and pairwise comparison. DNA stays in the browser. The deployed site has no backend, analytics, AI service, paid API, or account requirement.
 
@@ -91,15 +95,15 @@ See [release readiness and rollback](docs/RELEASE-READINESS.md) for PR dependenc
 
 Created by **Shambhavi**. The idea was to bring sequence analysis, scientific visualizations, and clear biological explanations together in one place. AI tools assisted development and review; the deployed scientific calculations execute locally without AI services.
 
-## SeqScope visual identity and verification
+## SeqScope.io visual identity and verification
 
-SeqScope retains the existing browser-local scientific engine and repository URL. Its graphite, vermilion and ivory interface includes linked GC/ORF/sequence inspection, an inline six-frame codon inspector, responsive nucleotide rows and locally bundled artwork. See [the refinement verification record](docs/SEQSCOPE-VALIDATION.md) for executed checks, source provenance and limitations. Logo variants are in `assets/seqscope-*.svg`; design tokens and responsive refinements are in `seqscope.css`.
+SeqScope.io retains the existing browser-local scientific engine and repository URL. Its graphite, vermilion and ivory interface includes linked GC/ORF/sequence inspection, an inline six-frame codon inspector, responsive nucleotide rows and locally bundled artwork. See [the refinement verification record](docs/SEQSCOPE-VALIDATION.md) for executed checks, source provenance and limitations. Logo variants are in `assets/seqscope-*.svg`; design tokens and responsive refinements are in `seqscope.css`.
 
 ## Official branding and printable reports
 
-The approved SeqScope mark is traced from the owner's reference artwork, including its original wordmark outlines. Stacked, horizontal, symbol-only, light, dark and print variants are in `assets/branding/`. The source reference and optional development tracing script are preserved; they are not build dependencies.
+The approved SeqScope.io mark is traced directly from the supplied artwork, preserving its original emblem, divider and wordmark outlines. See [rebranding provenance, compatibility and verification](docs/REBRANDING.md). Full horizontal, symbol-only, light, dark and print variants are in `assets/branding/`. The source reference and optional development tracing script are preserved; they are not build dependencies.
 
-Print Report and normal browser printing use the same dedicated A4 report. It includes the official logo as a real SVG image, complete sequence transformations, all six translations, complete candidate ORF tables, codon usage and current pattern results. Full strings are retained beyond screen display caps. A verified sample is in [the sample report PDF](docs/review/seqscope-sample-report.pdf). Browser printing remains entirely local.
+Print Report and normal browser printing use the same dedicated A4 report. It includes the official logo as a real SVG image, complete sequence transformations, all six translations, complete candidate ORF tables, codon usage and current pattern results. Full strings are retained beyond screen display caps. A historical sample with the previous branding is in [the sample report PDF](docs/review/seqscope-sample-report.pdf). Browser printing remains entirely local.
 
 The public GitHub Pages repository path is case-sensitive: use **DNA-sequence-analyzer** in the live URL.
 

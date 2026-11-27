@@ -29,7 +29,7 @@ test('six curated inputs match primary-record snapshots, complete lengths and in
 });
 
 test('coding examples and selected lambda/lac CDSs translate to independently published protein annotations',()=>{
-  // Expected residues are NCBI GBSeq /translation annotations, never computed by SeqScope.
+  // Expected residues are NCBI GBSeq /translation annotations, never computed by SeqScope.io.
   for(const key of CURATED_KEYS){
     const e=EXAMPLES[key];
     for(const cds of fixture[key].cds){
